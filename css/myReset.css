@@ -1,0 +1,132 @@
+/*========================================
+  RESET CSS AVANZATO - RESET + NORMALIZE + MIGLIORAMENTI
+==========================================*/
+
+/* Impostazioni base */
+html {
+  box-sizing: border-box;
+  font-size: 16px; /* Base flessibile per eventuali media query */
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base tipografica e resa grafica */
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  background-color: #fff;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Elementi semantici per browser non moderni */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+/* Pulizia di margini e padding per titoli, paragrafi e altri elementi */
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Liste: rimozione degli stili predefiniti */
+ul, ol {
+  list-style: none;
+  
+}
+
+/* Tabelle: eliminazione di spaziature indesiderate */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Immagini e media: garantire adattabilità al contenitore */
+img, svg, video, canvas, audio, iframe, embed, object {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Gestione delle citazioni per blockquote e q */
+blockquote, q {
+  quotes: none;
+}
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: '';
+}
+
+/* Form e interattività: base per una personalizzazione completa */
+button, input, select, textarea {
+  font: inherit;
+  margin: 0;
+  line-height: 1.15;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Pulsanti: aggiunta del cursore */
+button {
+  cursor: pointer;
+}
+
+/* Elementi tipografici speciali per blocchi di codice */
+code, kbd, samp {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 1em;
+}
+
+/* Gestione di sub e sup */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+
+/* Abbreviazioni e indirizzi */
+abbr[title] {
+  text-decoration: underline dotted;
+  cursor: help;
+}
+address {
+  font-style: normal;
+}
+
+/* Stile per la selezione del testo */
+::selection {
+  background-color: var(--primary-color, #005fcc);
+  color: #fff;
+}
+
+/* Gestione del focus per una migliore accessibilità */
+:focus {
+  outline: 2px solid var(--focus-color, #005fcc);
+  outline-offset: 2px;
+}
+/* Supporto per focus visibile in browser moderni */
+:focus:not(:focus-visible) {
+  outline: none;
+}
