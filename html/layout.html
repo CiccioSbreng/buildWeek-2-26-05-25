@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reservation bar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <!-- link icone bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="reservation.css">
+</head>
+
+<body>
+  <header class="row">
+
+
+    <div class="logoContainer col-sm-3 col-md-2">
+      <a href="#" class="logo">
+        <img src="assets/logo.png" alt="logo" class="logoImg d-block w-100">
+      </a>
+    </div>
+
+
+    <div id="reservationBar" class="reservationBar col-md-7">
+
+      <div class="resField dropdown" data-bs-toggle="dropdown"> <!-- location -->
+        <label for="resSearch">Location</label>
+        <input type="search" id="resSearch" placeholder="Where are you going?">
+
+        <ul class="dropdown-menu animateDropdown location">
+          <h3 class="dropdpwnTitle">Top 5</h3>
+          <li><a class="dropdown-item" href="#">Location1</a></li>
+          <li><a class="dropdown-item" href="#">Location2</a></li>
+          <li><a class="dropdown-item" href="#">Location3</a></li>
+          <li><a class="dropdown-item" href="#">Location4</a></li>
+          <li><a class="dropdown-item" href="#">Location5</a></li>
+        </ul>
+      </div>
+
+
+      <div class="resField"> <!-- date from -->
+        <label for="resCheckIn">Check-in</label>
+        <input type="search" id="resCheckIn" placeholder="Check-in" readonly>
+        <div class="myDropdown" style="opacity: 1;">
+          <!-- calendario checkin -->
+          <h3><span id="month">Month</span>, <span id="year">Year</span></h3>
+          <div id="checkIn" class="calendar">
+            <ul>
+              <li>SU</li>
+              <li>MO</li>
+              <li>TU</li>
+              <li>WE</li>
+              <li>TH</li>
+              <li>FR</li>
+              <li>SA</li>
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+              <li>8</li>
+              <li>9</li>
+              <li>10</li>
+              <li>11</li>
+              <li>12</li>
+              <li>13</li>
+              <li>14</li>
+              <li>15</li>
+              <li>16</li>
+              <li>17</li>
+              <li>18</li>
+              <li>19</li>
+              <li>20</li>
+              <li>21</li>
+              <li>22</li>
+              <li>23</li>
+              <li>24</li>
+              <li>25</li>
+              <li>26</li>
+              <li>27</li>
+              <li>28</li>
+              <li>29</li>
+              <li>30</li>
+              <li>31</li>
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="resField"> <!-- date to -->
+        <label for="resCheckOut">Check-out</label>
+        <input type="search" id="resCheckOut" placeholder="Check-out" readonly>
+        <div class="myDropdown">
+          <!-- calendario checkout -->
+        </div>
+      </div>
+
+
+
+
+      <div class="resField" id="dropdownWrapper"> <!-- guests + btn cerca-->
+        <label for="guestInput">Who</label>
+        <input type="text" id="guestInput" placeholder="1 Adult" readonly />
+
+        <div class="myDropdown" id="guestDropdown"> <!-- dropdown guests OK -->
+
+          <div class="guestRow">
+            <span>Adults</span>
+            <div class="counter">
+              <button class="decrease counterBtn"><i class="bi bi-dash-circle"></i></button>
+              <span class="qty">1</span>
+              <button class="increase counterBtn"><i class="bi bi-plus-circle"></i></button>
+            </div>
+          </div>
+
+          <div class="guestRow">
+            <span>Children</span>
+            <div class="counter">
+              <button class="decrease counterBtn"><i class="bi bi-dash-circle"></i></button>
+              <span class="qty">0</span>
+              <button class="increase counterBtn"><i class="bi bi-plus-circle"></i></button>
+            </div>
+          </div>
+
+          <div class="guestRow">
+            <span>Infants</span>
+            <div class="counter">
+              <button class="decrease counterBtn"><i class="bi bi-dash-circle"></i></button>
+              <span class="qty">0</span>
+              <button class="increase counterBtn"><i class="bi bi-plus-circle"></i></button>
+            </div>
+          </div>
+
+          <div class="guestRow">
+            <span>Pets</span>
+            <div class="counter">
+              <button class="decrease counterBtn"><i class="bi bi-dash-circle"></i></button>
+              <span class="qty">0</span>
+              <button class="increase counterBtn"><i class="bi bi-plus-circle"></i></button>
+            </div>
+          </div>
+
+
+        </div> <!-- fine dropdown guests -->
+
+
+        <button type="button" class="searchBtn"><i class="bi bi-search"></i></button>
+      </div>
+
+    </div> <!-- fine reservationBar -->
+
+    </div>
+
+    <div class="sideMenu col-2">
+      <ul>
+        <li><a href="#">Become Host</a></li>
+        <li><a href="#"><i class="bi bi-globe"></i></a></li>
+        <li>
+          <div class="userDiv">
+            <i class="bi bi-list"></i>
+            <i class="bi bi-person-circle"></i>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+
+  </header>
+  <main>
+
+  </main>
+  <footer>
+
+  </footer>
+  <script src="reservation2.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
