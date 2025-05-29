@@ -1,0 +1,134 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    font-family: 'Circular', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--airbnb-primary);
+}
+
+.reservation {
+    background: #fff;
+    border-radius: 40px;
+    padding: 8px 16px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.reservation input {
+    border: none;
+    padding: 12px 16px;
+    min-width: 150px;
+    font-size: 14px;
+}
+
+.reservation button {
+    background: var(--airbnb-primary);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.reservation button:hover {
+    background: var(--airbnb-hover);
+}
+
+.hero-section {
+    height: 100vh;
+    background-image: url('assets/assets/home.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    margin-left: 80px;
+    max-width: 400px;
+}
+
+.hero-content h1 {
+    font-size: 82px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 2rem;
+    line-height: 1;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    font-size: 16px;
+    background: white;
+    color: var(--text-dark);
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: transform 0.2s;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+
+
+footer {
+    background: white;
+    border-top: 1px solid var(--border-color);
+}
+
+footer a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--airbnb-primary);
+    text-decoration: underline;
+}
+
+.social-icons img {
+    height: 24px;
+    transition: opacity 0.3s ease;
+}
+
+.social-icons img:hover {
+    opacity: 0.8;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
