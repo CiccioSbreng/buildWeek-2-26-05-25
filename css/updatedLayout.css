@@ -38,6 +38,7 @@ header .row {
   border: 2px solid grey;
   border-radius: 50px;
   display: flex;
+  background-color: white;
 }
 
 
