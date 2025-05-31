@@ -20,6 +20,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .leftImgHeaderInfo {
@@ -28,6 +29,19 @@ main {
 
 .rightImgHeaderInfo {
     display: flex;
+}
+
+.rightImgHeaderInfo div{
+    display: flex;
+    align-items: center;
+}
+
+.rightImgHeaderInfo div:nth-child(1){
+    margin-right: 10px;
+}
+
+.rightImgHeaderInfo div:nth-child(2) img:nth-child(2){
+    display: none;
 }
 
 .imgHeaderLocation {
@@ -143,6 +157,26 @@ main {
     padding-left: 0.8rem !important;
 }
 
+form{
+    display: flex;
+    flex-direction: column;
+}
+
 form button {
+    width: 100px;
+    height: auto;
     margin-left: 0.8rem;
+    margin-right: 0.8rem;
+}
+
+.buttonContainer{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttonContainer button{
+    color: white;
+    font-weight: bold;
+    background-color: #E41D58 !important;
 }
