@@ -13,3 +13,20 @@ if (firstImg && secondImg) {
     })
 }
 
+/////////////////////////////////////
+/////funzione per minReservation/////
+/////////////////////////////////////
+function addGuest() {
+    console.log("Adding guest");
+    let qty = document.querySelector('.qty');
+    let newQty = parseInt(qty.textContent) + 1;
+    qty.textContent = newQty;
+}
+function removeGuest() {
+    console.log("Removing guest");
+    let qty = document.querySelector('.qty');
+    let newQty = parseInt(qty.textContent) - 1;
+    if (newQty > 0) {
+        qty.textContent = newQty;
+    }
+}

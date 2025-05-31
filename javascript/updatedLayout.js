@@ -6,9 +6,15 @@ window.addEventListener("load", setBtnState); //così perché se no i bottoni no
 
 //set btn
 function setBtnState() {
+  console.log("setBtnState called");
   let decrBtns = document.querySelectorAll('.decrease');
   let incrBtns = document.querySelectorAll('.increase');
 
+  console.log("decrBtns: ");
+  console.log(decrBtns);
+
+  console.log("incrBtns: ");
+  console.log(incrBtns);
   decrBtns.forEach(decrBtn => {
     const qty = parseInt(decrBtn.parentElement.querySelector('.qty').textContent);
     qty == 0 ? decrBtn.classList.add('disabled') : decrBtn.classList.remove('disabled');
@@ -18,6 +24,8 @@ function setBtnState() {
     const qty = parseInt(incrBtn.parentElement.querySelector('.qty').textContent);
     qty >= MAX_GUESTS ? incrBtn.classList.add('disabled') : incrBtn.classList.remove('disabled');
   })
+  console.log("setBtnState ended");
+
 }
 
 ///////////////////////////////////////
@@ -214,3 +222,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+
