@@ -361,12 +361,12 @@ ul {
 footer {
   background-color: var(--background-hover);
   padding: 1em 2em;
-
 }
 footer a:hover {
   color: #E41D58;
 }
 footer h6 {
+  font-weight: 600;
   padding: 0.6em 0;
 }
 #footerShared>div {
