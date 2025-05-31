@@ -12,11 +12,18 @@ body {
     padding: 15px 20px;
     background-color: #fff;
     border-radius: 0 0 12px 12px;
+   
 }
 
-.container-fluid {
-    margin-left: 15vh;
+header {
+  align-items: center;
+  justify-content:space-around;
+  /* padding: 1em 3em; */
+  background: transparent;
+  width: 87%;
 }
+
+
 
 /* Stile delle card e del carosello */
 .card {
@@ -91,6 +98,9 @@ body {
 .bi-star-fill {
     color: #ff385c;
 }
+.header-stays > .btn-home {
+  margin-left: 0;
+}
 
 /* Classi personalizzate per 5 colonne */
 .col-xxl-5ths,
@@ -98,4 +108,13 @@ body {
 .col-lg-5ths {
     flex: 0 0 20%;
     max-width: 20%;
+}
+
+.custom-container {
+  width: 100%;
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
 }

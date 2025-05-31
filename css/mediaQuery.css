@@ -1,10 +1,11 @@
 /* Media queries per dispositivi piccoli */
 @media (max-width: 575.98px) {
-
-    .container-fluid,
-    .container {
-        margin-left: 0;
-        padding: 0 12px;
+    .custom-container {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
     }
 
     .header-stays {
@@ -67,13 +68,12 @@
 
 /* Media queries per dispositivi piccoli in orizzontale */
 @media (min-width: 576px) and (max-width: 767.98px) {
-    .container-fluid {
-        margin-left: 0;
-        padding: 0 16px;
-    }
-
-    .header-stays {
-        padding: 14px 20px;
+    .custom-container {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
     }
 
     h1 {
@@ -122,8 +122,12 @@
 
 /* Media queries per tablet */
 @media (min-width: 768px) and (max-width: 991.98px) {
-    .container-fluid {
-        margin-left: 8vh;
+    .custom-container {
+        padding-left: 40px;
+        padding-right: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
     }
 
     h1 {
@@ -133,7 +137,6 @@
     .btn-home .btn {
         font-size: 14px;
         padding: 9px 18px;
-        
     }
 
     .container {
@@ -164,6 +167,14 @@
 
 /* Media queries per desktop */
 @media (min-width: 992px) and (max-width: 1199.98px) {
+    .custom-container {
+        padding-left: 60px;
+        padding-right: 60px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1140px;
+    }
+
     .col-lg-5ths {
         flex: 0 0 20%;
         max-width: 20%;
@@ -189,8 +200,15 @@
         max-width: 20%;
     }
 
+    .custom-container {
+    
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1140px;
+    }
+
     .card img {
-        height: 200px;
+        height: 180px;
     }
 
     .card-body {
@@ -201,7 +219,7 @@
         font-size: 16px;
     }
 
-    .container-fluid {
+    .container {
         max-width: 1140px;
     }
 }
@@ -213,8 +231,15 @@
         max-width: 20%;
     }
 
+    .custom-container {
+       
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1320px;
+    }
+
     .card img {
-        height: 200px;
+        height: 180px;
     }
 
     .card {
@@ -229,9 +254,10 @@
         font-size: 16px;
     }
 
-    .container-fluid {
+    .container {
         max-width: 1320px;
     }
+
 }
 
 /* Disabilitazione effetti hover su dispositivi touch */
