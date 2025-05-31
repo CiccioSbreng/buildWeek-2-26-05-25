@@ -23,7 +23,7 @@ body {
     border: none;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease-in-out;
     margin-bottom: 20px;
     overflow: hidden;
 }
@@ -35,7 +35,7 @@ body {
 
 .card img {
     border-radius: 12px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease-in-out;
     aspect-ratio: 4/3;
     object-fit: cover;
     width: 100%;
@@ -43,7 +43,7 @@ body {
 }
 
 .card img:hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
 /* Stile dei pulsanti */
@@ -52,7 +52,7 @@ body {
     color: #ff385c;
     background: none;
     border: none;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease-in-out;
 }
 
 .btn-plus:hover {
@@ -61,7 +61,7 @@ body {
 
 .btn {
     border-radius: 20px;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
 }
 
 .btn:hover {
@@ -99,4 +99,3 @@ body {
     flex: 0 0 20%;
     max-width: 20%;
 }
-
