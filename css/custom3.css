@@ -180,3 +180,39 @@ form button {
     font-weight: bold;
     background-color: #E41D58 !important;
 }
+
+
+.infoAndReservation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.reservation {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    padding: 0.5em;
+    border-radius: 10px;
+}
+.reservation>*{
+    margin-bottom: 0.5em;
+}
+.rating i{
+    color: #E41D58 !important;
+}
+#minReservation {
+    border: 1px solid black;
+    border-radius: 20px;
+}
+#minReservation>* {
+    padding: 0.5em;
+}
+#minReservation>div:nth-child(2) {
+    border-left: 1px solid black;
+}
+#minReservation>div:nth-child(3) {
+  border-top: 1px solid black;
+}
+#minReservation>div {
+    padding: 0.5em 2em;
+}
+
