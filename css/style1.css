@@ -1,134 +1,191 @@
+:root {
+    --airbnb-primary: #FF385C;
+    --text-dark: #222222;
+}
+
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    font-family: 'Circular', Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    font-family: 'Circular', Arial, sans-serif !important;
+    -webkit-font-smoothing: antialiased !important;
+    background-color: #000000 !important;
 }
 
 header {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(5px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(5px) !important;
 }
 
 .nav-link {
-    color: var(--text-dark);
-    font-weight: 500;
-    transition: color 0.3s ease;
+    color: var(--text-dark) !important;
+    font-weight: 500 !important;
+    transition: color 0.3s ease !important;
 }
 
 .nav-link:hover {
-    color: var(--airbnb-primary);
+    color: var(--airbnb-primary) !important;
 }
 
 .reservation {
-    background: #fff;
-    border-radius: 40px;
-    padding: 8px 16px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    background: #000000 !important;
+    border-radius: 40px !important;
+    padding: 8px 16px !important;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1) !important;
 }
 
 .reservation input {
-    border: none;
-    padding: 12px 16px;
-    min-width: 150px;
-    font-size: 14px;
+    border: none !important;
+    padding: 12px 16px !important;
+    min-width: 150px !important;
+    font-size: 14px !important;
 }
 
 .reservation button {
-    background: var(--airbnb-primary);
-    border: none;
-    padding: 12px 24px;
-    border-radius: 24px;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
+    background: var(--airbnb-primary) !important;
+    border: none !important;
+    padding: 12px 24px !important;
+    border-radius: 24px !important;
+    font-weight: 500 !important;
+    transition: background-color 0.3s ease !important;
 }
 
 .reservation button:hover {
-    background: var(--airbnb-hover);
+    background: var(--airbnb-hover) !important;
 }
 
 .hero-section {
-    height: 100vh;
-    background-image: url('assets/assets/home.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100vh !important;
+    background-image: url('../assets/home.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    z-index: 1 !important;
+}
+
+.hero-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    z-index: 2 !important;
 }
 
 .hero-content {
-    margin-left: 80px;
-    max-width: 400px;
+    position: relative !important;
+    z-index: 3 !important;
+    color: rgb(0, 0, 0) !important;
+    padding-top: 200px !important;
+    padding-left: 80px !important;
 }
 
 .hero-content h1 {
-    font-size: 82px;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 2rem;
-    line-height: 1;
+    font-size: 82px !important;
+    font-weight: bold !important;
+    margin-bottom: 2rem !important;
+    line-height: 1 !important;
 }
 
 .cta-button {
-    padding: 15px 30px;
-    font-size: 16px;
-    background: white;
-    color: var(--text-dark);
-    border: none;
-    border-radius: 8px;
-    font-weight: 500;
-    transition: transform 0.2s;
+    padding: 15px 30px !important;
+    font-size: 16px !important;
+    background: #000000 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    transition: transform 0.2s !important;
 }
 
 .cta-button:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) !important;
 }
 
-
 footer {
-    background: white;
-    border-top: 1px solid var(--border-color);
+    background: #000000 !important;
+    border-top: 1px solid var(--border-color) !important;
+    margin-top: auto !important;
 }
 
 footer a {
-    color: var(--text-dark);
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
+    color: var(--text-dark) !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    transition: color 0.3s ease !important;
 }
 
 footer a:hover {
-    color: var(--airbnb-primary);
-    text-decoration: underline;
+    color: var(--airbnb-primary) !important;
+    text-decoration: underline !important;
 }
 
 .social-icons img {
-    height: 24px;
-    transition: opacity 0.3s ease;
+    height: 24px !important;
+    transition: opacity 0.3s ease !important;
 }
 
 .social-icons img:hover {
-    opacity: 0.8;
+    opacity: 0.8 !important;
 }
 
-
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+.container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 24px !important; /* Reduced gap to fit cards better */
+    padding: 32px 16px !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
 }
 
+.destination {
+    height: 100% !important;
+    background: #000000 !important;
+    padding: 20px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08) !important;
+    text-align: center !important;
+    transition: box-shadow 0.3s, transform 0.2s !important;
+    cursor: pointer !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
 
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+.destination .card-img-top {
+    width: 140px !important;
+    height: 140px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    margin-bottom: 20px !important;
+}
+
+.row-cols-md-4 {
+    --bs-gutter-x: 1rem !important;
+    --bs-gutter-y: 1rem !important;
+}
+
+.nearby-destinations {
+    position: relative !important;
+    z-index: 4 !important;
+    margin-top: 100vh !important;
+    background: #000000 !important;
+}
+
+p, h1, h2, h3, h4, h5, h6, .nav-link, small, .text-muted {
+    color: white !important;
 }
