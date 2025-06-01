@@ -38,7 +38,7 @@
         <label for="resSearch">Location</label>
         <input type="search" id="resSearch" placeholder="Where to?">
         <ul class="dropdown-menu animateDropdown location"> <!--location dropdown-->
-          <h3 class="dropdpwnTitle">Top 5</h3>
+          <li><h3>Top 5</h3></li>
           <li><a class="dropdown-item" href="airBnbPgn2.html">Genova</a></li>
           <li><a class="dropdown-item" href="#">Location2</a></li>
           <li><a class="dropdown-item" href="#">Location3</a></li>
@@ -161,13 +161,13 @@
   <main>
     
     <!-- da mettere dentro al main, non al footer; visibile solo su mobile -->
-    <section id="footerMobile" class="col-sm-12 d-lg-none">
+    <div id="footerMobile" class="col-sm-12 d-lg-none">
       <ul class="d-flex justify-content-around">
         <li><a href="#"><i class="bi bi-search"></i> Discover</a></li>
         <li><a href="#"><i class="bi bi-heart"></i> Favourites</a></li>
         <li><a href="#"><i class="bi bi-person-circle"></i> Log-in </a></li>
       </ul>
-    </section>
+    </div>
 
 
   </main>
@@ -175,7 +175,7 @@
   <footer>
 
     <section id="footerShared" class="row">
-      <div id="assistenza" class="col-sm-12 col-lg-4">
+      <div  class="col-sm-12 col-lg-4">
         <h6>Support</h6>
         <ul>
           <li><a href="#">Help Center</a></li>
@@ -186,7 +186,8 @@
           <li><a href="#">Report neighbourhood concern</a></li>
         </ul>
       </div>
-      <div id="ospitare" class="col-sm-12 col-lg-4">
+
+      <div class="col-sm-12 col-lg-4">
         <h6>Hosting</h6>
         <ul>
           <li><a href="#">Airbnb your home</a></li>
@@ -197,7 +198,8 @@
           <li><a href="#">Find a co-host</a></li>
         </ul>
       </div>
-      <div id="ospitare" class="col-sm-12 col-lg-4">
+
+      <div class="col-sm-12 col-lg-4">
         <h6>Airbnb</h6>
         <ul>
           <li><a href="#">2025 Summer Release</a></li>
@@ -210,11 +212,11 @@
         </ul>
       </div>
     </section>
-    <section id="copyright" class="row">
+
+    <div id="copyright" class="row">
 
       <div class="copyright-left d-sm-none d-lg-block col-lg-8">
         <p>© 2025 Airbnb, Inc. &sdot; Privacy &sdot; Terms &sdot; Sitemap &sdot; Company details</p>
-        </p>
       </div>
 
       <div class="copyright-right d-sm-flex col-sm-11 col-lg-4 justify-content-around row">
@@ -231,7 +233,7 @@
         </div>
       </div>
 
-    </section>
+    </div>
 
 
   </footer>
