@@ -1,0 +1,411 @@
+:root {
+  --background-hover: rgb(241, 241, 242);
+  --main-color: #E41D58;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+
+header {
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+
+  width: 100%;
+
+  /* se vogliamo l'header sticky va messo dentro al main e vanno abilitate queste due righe di seguito 
+  position: sticky;
+  top: 0;
+   */
+}
+header .row {
+  align-items: center;
+}
+
+#toggleReservationBar {
+  border-radius: 50px;
+  background-color: white;
+  border: 1px solid var(--background-hover) ; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) ;
+  margin: auto
+}
+
+
+/* ************* barra di ricerca ********************* */
+.reservationBar {
+  padding: 0;
+  border: 2px solid grey;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  position: relative;
+}
+
+
+.backgroundHover {
+  background-color: var(--background-hover);
+  transition: background-color 0.3s linear;
+}
+
+/* ************* campi ricerca ********************* */
+.resField {
+  padding: 1em;
+  width: 23%;
+  position: relative;
+  border-radius: 50px;
+  transition: width 0.5s linear;
+  background-color: white;
+}
+
+.resField>* {
+  display: block;
+}
+
+.resField:nth-child(2), .resField:nth-child(3) {
+  margin: 0 0.5em;
+}
+
+.resField>label {
+  padding-bottom: 0.5em;
+  font-weight: 700;
+}
+
+.resField:hover {
+  width: 27%;
+  background-color: var(--background-hover);
+}
+/*per uniformare i colori di sfondo con hover e/o focus*/
+input {
+  outline: none;
+  border: 0px;
+  background-color: transparent;
+}
+
+/* ************* doropdown comune *****************/
+.myDropdown {
+  position: absolute;
+  width: 100%;
+  height: fit-content;
+  top: 120%;
+  right: 1em;
+  z-index: 10;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  /* transition  */
+  opacity: 0;
+  pointer-events: none;
+  /*evita click accidentali con opacity a 0*/
+  transform: scale(1.10);
+  transition: opacity 0.3s linear, transform 0.3s linear;
+}
+
+.myDropdown.show {
+  opacity: 1;
+  transform: scale(1.10);
+  background-color: white;
+  /*abilita i click quando visibile*/
+  pointer-events: auto;
+  
+}
+
+.clicked {
+  border-radius: 50px;
+  border: 1px solid var(--background-hover);
+  background-color: var(--background-hover);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/******************** dropdown items comune ************** */
+.dropdown-menu h3 {
+  padding-left: 0.3em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* *********** dropdown specifico: LOCATION -bs **************** */
+.location {
+  left: 1em !important;
+}
+
+.location a::before {
+  content: '📍';
+  margin-right: 0.3em;
+  font-size: 1.5em;
+}
+
+.dropdown-menu {
+  width: 150%;
+  top: 0.3em !important;
+}
+
+.animateDropdown {
+  opacity: 0;
+  visibility: hidden;
+  display: block !important;
+  transform: translateY(105px);
+  transition: opacity 1s ease, transform 0.5s ease;
+}
+
+.dropdown.show .dropdown-menu.animateDropdown {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(100px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ************** dropdown specifico: DATE **************** */
+
+#checkInDropdown>*,
+#checkOutDropdown>* {
+  position: relative;
+}
+
+#dateDropdown.myDropdown.show {
+  width: auto;
+  max-width: 700px;
+  position: absolute;
+  top: 130%;
+  right: 15%;
+  opacity: 1;
+}
+
+.calendarGrid {
+  display: flex;
+  gap: 1em;
+  width: 60%;
+}
+/*sovrascrivo le classi di flatpickr*/
+.flatpickr-calendar.inline {
+  border: none !important;
+  box-shadow: none !important;
+}
+.flatpickr-day:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+
+.flatpickr-day.in-range {
+  background-color: var(--main-color);
+  color: white;
+  border: 1px soli var(--main-color);
+  opacity: 0.5;
+  border-radius: 0%;
+}
+.in-range.selected-start {
+  opacity: 0.9; 
+  border-radius: 45% 0 0 45% !important;
+}
+.in-range.selected-end {
+  opacity: 0.9;
+  border-radius: 0 45% 45% 0 !important;
+}
+
+.myDropdown#checkInDropdown,
+.myDropdown#checkOutDropdown {
+  width: 320px;
+  padding: 0.2em;
+  margin-top: 0.5em;
+  left: 0.5em;
+  transition: opacity 0s, transform 0s !important;
+}
+
+
+/* ************** dropdown specifico: GUESTS **************** */
+
+.counterBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  color: grey;
+  font-size: 1em;
+  border-radius: 50%;
+  width: 1.8em;
+  height: 1.8em;
+}
+
+.counterBtn:not(.counterBtn.disabled):hover {
+  color: black
+}
+
+.disabled {
+  cursor: not-allowed !important;
+  color: rgb(237, 235, 235);
+}
+
+.counter i {
+  font-size: 1.5em;
+}
+
+.guestRow {
+  display: flex;
+  justify-content: space-between;
+  transition: font-size 0.3s linear;
+}
+
+.guestRow:hover {
+  background-color: var(--background-hover);
+  border-radius: 5px;
+  font-size: 1.1rem;
+}
+
+.guestRow>* {
+  flex: 1;
+  padding: 0.5em;
+}
+
+.counter {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.counter .qty {
+  margin: 0 10px;
+}
+
+/* *************bottone ricerca ********************* */
+.searchBtn {
+  width: 4em;
+  height: 4em;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  color: white;
+  font-size: 1em;
+  position: absolute;
+  right: 0.9em;
+  top: 0.7em;
+  cursor: pointer;
+}
+
+/* **************** side menu *********************** */
+.sideMenu{
+  padding: 0.5em;
+}
+
+.sideMenu a {
+  padding-right: 1em;
+}
+
+.sideMenu .dropdown-menu {
+  --bs-dropdown-min-width: 15rem;
+}
+
+.sideMenu li:not(:last-child) {
+  border-bottom: 1px solid lightgray;
+}
+.sideMenu li {
+  width: 90%;
+  margin: auto;
+  padding: 0.5em 0;
+}
+.sideMenu li a{
+  padding: 0.5em;
+}
+.sideMenu .dropdown-toggle::after  {
+  display: none;
+}
+/****************** footer ******************/
+footer {
+  background-color: var(--background-hover);
+  padding: 1em 2em;
+}
+footer li{
+  padding:0.5em 0;
+}
+footer a:hover {
+  color: var(--main-color);
+  text-decoration: underline;
+}
+footer h6 {
+  font-weight: 600;
+  padding: 0.6em 0;
+}
+#footerShared>div {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+#copyright{
+  justify-content: space-between;
+  border-top: 1px solid grey;
+  padding-top: 0.5em;
+}
+.copyright-right i {
+  padding-right: 0.5em;
+}
+.copyright-right>div {
+  padding-right: 1em;
+}
+
+
+/* ************** MEDIAQUERIES ********************** */
+@media screen and (max-width: 768px) {
+  .dropdown-menu{
+    width: 100% !important;
+  }
+  .reservationBar {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0.5em;
+  }
+  .resField {
+    width: 80% !important;
+    margin-bottom: 1em !important;
+  }
+  .cin, .cout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #dateDropdown.myDropdown.show {
+    width: 80% !important;
+    left: 2em;
+    top: 35% !important;
+  }
+  #toggleReservationBar {
+    margin-bottom: 1em !important;
+    margin-top: 1em !important;
+    padding: 0.6em;
+  }
+  .closeBtn{
+    width: 40px;
+    height: 40px;
+    margin: unset !important;
+    margin-left: 90% !important; 
+    padding: 0 !important;
+  }
+  #footerMobile {
+    padding:1em ;
+    border-top: 1px solid grey;
+    background-color: white;
+    position: sticky;
+    bottom: 0;
+  }
+  #footerShared>div {
+    border-bottom: 1px solid grey;
+  }
+  #copyright {
+    justify-content: flex-end;
+  }
+  .calendarGrid {
+    flex-direction: column;
+  }
+}

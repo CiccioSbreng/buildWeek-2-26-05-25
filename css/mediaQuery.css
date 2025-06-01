@@ -1,0 +1,272 @@
+/* Media queries per dispositivi piccoli */
+@media (max-width: 575.98px) {
+    .custom-container {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+    }
+
+    .header-stays {
+        padding: 12px 16px;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+        margin-bottom: 0;
+    }
+
+    .header-stays span,
+    .header-stays p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 6px;
+    }
+
+    .btn-home {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .btn-home .btn {
+        font-size: 12px;
+        padding: 8px 16px;
+        width: 100%;
+    }
+
+    .card {
+        margin-bottom: 16px;
+    }
+
+    .card-body {
+        padding: 8px !important;
+        margin-bottom: 0;
+    }
+
+    .card-body p {
+        font-size: 13px;
+        margin-bottom: 2px;
+    }
+
+    .card-desc {
+        font-size: 14px;
+    }
+
+    .col-xxl-5ths,
+    .col-xl-5ths,
+    .col-lg-5ths,
+    .col-md-4,
+    .col-sm-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Media queries per dispositivi piccoli in orizzontale */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .custom-container {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .btn-home {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .btn-home .btn {
+        font-size: 13px;
+        padding: 8px 16px;
+        flex: 1;
+        min-width: calc(50% - 4px);
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    .card-body {
+        padding: 10px !important;
+        margin-bottom: 8px;
+    }
+
+    .card-body p {
+        font-size: 14px;
+    }
+
+    .card-desc {
+        font-size: 15px;
+    }
+
+    .col-xxl-5ths,
+    .col-xl-5ths,
+    .col-lg-5ths,
+    .col-md-4,
+    .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* Media queries per tablet */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .custom-container {
+        padding-left: 40px;
+        padding-right: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .btn-home .btn {
+        font-size: 14px;
+        padding: 9px 18px;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .card-body {
+        padding: 0 !important;
+        margin-bottom: 10vh;
+    }
+
+    .card-body p {
+        font-size: 15px;
+    }
+
+    .card-desc {
+        font-size: 16px;
+    }
+
+    .col-xxl-5ths,
+    .col-xl-5ths,
+    .col-lg-5ths,
+    .col-md-4 {
+        flex: 0 0 33.3333%;
+        max-width: 33.3333%;
+    }
+}
+
+/* Media queries per desktop */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .custom-container {
+        padding-left: 60px;
+        padding-right: 60px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1140px;
+    }
+
+    .col-lg-5ths {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+
+    .card img {
+        height: 150px;
+    }
+
+    .card-body {
+        padding: 10px 0;
+    }
+
+    .card-body p {
+        font-size: 15px;
+    }
+}
+
+/* Media queries per desktop largo */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .col-xl-5ths {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+
+    .custom-container {
+    
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1140px;
+    }
+
+    .card img {
+        height: 180px;
+    }
+
+    .card-body {
+        padding: 12px 0;
+    }
+
+    .card-body p {
+        font-size: 16px;
+    }
+
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* Media queries per desktop molto largo */
+@media (min-width: 1400px) {
+    .col-xxl-5ths {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+
+    .custom-container {
+       
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1320px;
+    }
+
+    .card img {
+        height: 180px;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .card-body {
+        padding: 15px 0;
+    }
+
+    .card-body p {
+        font-size: 16px;
+    }
+
+    .container {
+        max-width: 1320px;
+    }
+
+}
+
+/* Disabilitazione effetti hover su dispositivi touch */
+@media (hover: none) {
+
+    .card:hover,
+    .card img:hover,
+    .btn-plus:hover {
+        transform: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+}

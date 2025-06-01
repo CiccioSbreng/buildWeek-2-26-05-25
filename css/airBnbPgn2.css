@@ -1,0 +1,120 @@
+/* Stili base del layout */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background-color: #fafafa;
+    margin: 0;
+}
+
+/* Stile dell'intestazione */
+.header-stays {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    background-color: #fff;
+    border-radius: 0 0 12px 12px;
+   
+}
+
+header {
+  align-items: center;
+  justify-content:space-around;
+  /* padding: 1em 3em; */
+  background: transparent;
+  width: 87%;
+}
+
+
+
+/* Stile delle card e del carosello */
+.card {
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+}
+
+.card img {
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+}
+
+/* Stile dei pulsanti */
+.btn-plus {
+    font-size: 35px;
+    color: #ff385c;
+    background: none;
+    border: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+.btn-plus:hover {
+    transform: scale(1.1);
+}
+
+.btn {
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+/* Contenuto interno delle card */
+.card-body {
+    padding: 0 !important;
+    margin-bottom: 13vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card-body p {
+    margin-bottom: 3px;
+    font-size: 17px;
+}
+
+.card-desc {
+    font-weight: 600;
+    color: #222;
+}
+
+.bi-star-fill {
+    color: #ff385c;
+}
+.header-stays > .btn-home {
+  margin-left: 0;
+}
+
+/* Classi personalizzate per 5 colonne */
+.col-xxl-5ths,
+.col-xl-5ths,
+.col-lg-5ths {
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+.custom-container {
+  width: 100%;
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
