@@ -182,6 +182,7 @@ form button {
 }
 
 
+/* ************ parte reservation ************* */
 .infoAndReservation {
     display: flex;
     justify-content: space-between;
@@ -215,4 +216,6 @@ form button {
 #minReservation>div {
     padding: 0.5em 2em;
 }
-
+input:focus {
+    outline: none;
+}

@@ -14,7 +14,7 @@ if (firstImg && secondImg) {
 }
 
 /////////////////////////////////////
-/////funzione per minReservation/////
+/////funzioni per guests/////////////
 /////////////////////////////////////
 function addGuest() {
     console.log("Adding guest");
@@ -30,3 +30,27 @@ function removeGuest() {
         qty.textContent = newQty;
     }
 }
+
+/////////////////////////////////////
+/////flatpikr minReservation/////////
+/////////////////////////////////////
+document.addEventListener("DOMContentLoaded", function () {
+    const checkInDate = document.getElementById("minCheckIn");
+    const checkOutDate = document.getElementById("minCheckOut");
+
+    let checkInInstance;
+    let checkOutInstance;
+
+    checkInInstance = flatpickr(checkInDate, {
+        dateFormat: "d-m-Y",
+        minDate: "today",
+        onChange: function (selectedDates) {
+            const checkIn = selectedDates[0];
+            checkOutInstance.set("minDate", checkIn);
+        }
+    });
+
+    checkOutInstance = flatpickr(checkOutDate, {
+        dateFormat: "d-m-Y"
+    });
+});

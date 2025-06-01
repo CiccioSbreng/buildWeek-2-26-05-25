@@ -127,7 +127,10 @@ document.addEventListener("DOMContentLoaded", function () {
 ///////////////////////////////////
 
 document.addEventListener("DOMContentLoaded", function () {
-  const resBar = document.getElementById("reservationBar");
+  //gestisco il dropdown diversamente per mobile (bisogna però ricaricare la pagina per vederlo in funzione)
+  const isMobile = window.matchMedia("(max-width: 991.98px)").matches;
+
+  let checkIn = null, checkOut = null;
   const checkInInput = document.getElementById("resCheckIn");
   const checkOutInput = document.getElementById("resCheckOut");
   const dateDropdown = document.getElementById("dateDropdown");
@@ -135,32 +138,54 @@ document.addEventListener("DOMContentLoaded", function () {
   let checkInDate = null;
   let checkOutDate = null;
 
-  const checkInPicker = flatpickr("#checkInCalendar", {
-    inline: true,
-    minDate: "today",
-    dateFormat: "d-m-Y",
-    onChange: function (selectedDates) {
-      checkInDate = selectedDates[0];
-      checkInInput.value = formatDate(checkInDate);
-      checkOutPicker.set("minDate", checkInDate);
-      if (checkInDate && checkOutDate) {
-        highlightRange(checkInDate, checkOutDate);
+  if (isMobile) {
+    // MOBILE: usa popup Flatpickr classico
+    checkIn = flatpickr("#resCheckIn", {
+      dateFormat: "d-m-Y",
+      minDate: "today",
+      onChange: function (selectedDates) {
+        checkIn = selectedDates[0];
+        checkInInput.value = formatDate(checkIn);
+        checkOut.set("minDate", checkIn);
       }
-    }
-  });
+    });
 
-  const checkOutPicker = flatpickr("#checkOutCalendar", {
-    inline: true,
-    minDate: "today",
-    dateFormat: "d-m-Y",
-    onChange: function (selectedDates) {
-      checkOutDate = selectedDates[0];
-      checkOutInput.value = formatDate(checkOutDate);
-      if (checkInDate && checkOutDate) {
-        highlightRange(checkInDate, checkOutDate);
+    checkOut = flatpickr("#resCheckOut", {
+      dateFormat: "d-m-Y",
+      minDate: "today",
+      onChange: function (selectedDates) {
+        checkOut = selectedDates[0];
+        checkOutInput.value = formatDate(checkOut);
       }
-    }
-  });
+    });
+  } else {
+      const checkInPicker = flatpickr("#checkInCalendar", {
+        inline: true,
+        minDate: "today",
+        dateFormat: "d-m-Y",
+        onChange: function (selectedDates) {
+          checkInDate = selectedDates[0];
+          checkInInput.value = formatDate(checkInDate);
+          checkOutPicker.set("minDate", checkInDate);
+          if (checkInDate && checkOutDate) {
+            highlightRange(checkInDate, checkOutDate);
+          }
+        }
+      });
+
+      const checkOutPicker = flatpickr("#checkOutCalendar", {
+        inline: true,
+        minDate: "today",
+        dateFormat: "d-m-Y",
+        onChange: function (selectedDates) {
+          checkOutDate = selectedDates[0];
+          checkOutInput.value = formatDate(checkOutDate);
+          if (checkInDate && checkOutDate) {
+            highlightRange(checkInDate, checkOutDate);
+          }
+        }
+      });
+  }
 
   function highlightRange(fromDate, toDate) {
     const calendarDays = document.querySelectorAll(".flatpickr-day");

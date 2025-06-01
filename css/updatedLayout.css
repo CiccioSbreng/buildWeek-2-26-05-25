@@ -1,5 +1,6 @@
 :root {
   --background-hover: rgb(241, 241, 242);
+  --main-color: #E41D58;
 }
 * {
   box-sizing: border-box;
@@ -15,9 +16,14 @@ a {
 header {
   align-items: center;
   justify-content: space-between;
-  /* padding: 1em 3em; */
-  background: transparent;
+  background: white;
+
   width: 100%;
+
+  /* se vogliamo l'header sticky va messo dentro al main e vanno abilitate queste due righe di seguito 
+  position: sticky;
+  top: 0;
+   */
 }
 header .row {
   align-items: center;
@@ -38,7 +44,9 @@ header .row {
   border: 2px solid grey;
   border-radius: 50px;
   display: flex;
+  justify-content: space-between;
   background-color: white;
+  position: relative;
 }
 
 
@@ -50,7 +58,7 @@ header .row {
 /* ************* campi ricerca ********************* */
 .resField {
   padding: 1em;
-  width: 25%;
+  width: 23%;
   position: relative;
   border-radius: 50px;
   transition: width 0.5s linear;
@@ -74,29 +82,11 @@ header .row {
   width: 27%;
   background-color: var(--background-hover);
 }
-
-/* pseudoelement per colorare anche il "sotto" del singolo div in hover */
-/* .resField:not(:first-child):hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -60px;
-  width: 100px;
-  height: 100%;
-  background: var(--background-hover);
-  z-index: -1;
-} */
-
-
-
-input[type='search'],
-input[type='search']:focus,
-input[type='text'],
-input[type='text']:focus {
+/*per uniformare i colori di sfondo con hover e/o focus*/
+input {
   outline: none;
   border: 0px;
   background-color: transparent;
-  /*per uniformare i colori di sfondo con hover e/o focus*/
 }
 
 /* ************* doropdown comune *****************/
@@ -112,8 +102,6 @@ input[type='text']:focus {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 1em;
-  background: white;
-
   /* transition  */
   opacity: 0;
   pointer-events: none;
@@ -124,9 +112,11 @@ input[type='text']:focus {
 
 .myDropdown.show {
   opacity: 1;
-  pointer-events: auto;
-  /*abilita i click quando visibile*/
   transform: scale(1.10);
+  background-color: white;
+  /*abilita i click quando visibile*/
+  pointer-events: auto;
+  
 }
 
 .clicked {
@@ -135,14 +125,6 @@ input[type='text']:focus {
   background-color: var(--background-hover);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-
-.innerClicked {
-  border-radius: 50px;
-  border: 1px solid black;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
 
 /******************** dropdown items comune ************** */
 .dropdown-menu h3 {
@@ -197,32 +179,41 @@ ul {
 #dateDropdown.myDropdown.show {
   width: auto;
   max-width: 700px;
-  top: 15%;
-  right: 30%;
+  position: absolute;
+  top: 130%;
+  right: 15%;
   opacity: 1;
-}
-
-.flatpickr-day.in-range {
-  background-color: #1db2e446;
-  border-radius: 0%;
-}
-
-.in-range.selected-start {
-  background-color: #1db2e4;
-  border-radius: 50% 0 0 50%;
-  color: white;
-}
-
-.in-range.selected-end {
-  background-color: #1db2e4;
-  border-radius: 0 50% 50% 0;
-  color: white;
 }
 
 .calendarGrid {
   display: flex;
   gap: 1em;
   width: 60%;
+}
+/*sovrascrivo le classi di flatpickr*/
+.flatpickr-calendar.inline {
+  border: none !important;
+  box-shadow: none !important;
+}
+.flatpickr-day:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+
+.flatpickr-day.in-range {
+  background-color: var(--main-color);
+  color: white;
+  border: 1px soli var(--main-color);
+  opacity: 0.5;
+  border-radius: 0%;
+}
+.in-range.selected-start {
+  opacity: 0.9; 
+  border-radius: 45% 0 0 45% !important;
+}
+.in-range.selected-end {
+  opacity: 0.9;
+  border-radius: 0 45% 45% 0 !important;
 }
 
 .myDropdown#checkInDropdown,
@@ -232,32 +223,8 @@ ul {
   margin-top: 0.5em;
   left: 0.5em;
   transition: opacity 0s, transform 0s !important;
-  /* background-color: #E41D58; */
 }
 
-/*sovrascrivo le classi di flatpickr*/
-.flatpickr-calendar {
-  border: none !important;
-  box-shadow: none !important;
-}
-
-
-
-/* sovrascrivo classi flatpickr per ingrandire la freccetta in alto */
-.flatpickr-calendar.arrowTop:before,
-.flatpickr-calendar.arrowTop:after {
-  bottom: 101%;
-}
-
-.flatpickr-calendar.arrowTop::before {
-  border-width: 9px;
-  margin: 0px -6px;
-}
-
-.flatpickr-calendar.arrowTop::after {
-  border-width: 8px;
-  margin: -1px -5px;
-}
 
 /* ************** dropdown specifico: GUESTS **************** */
 
@@ -272,7 +239,6 @@ ul {
   border-radius: 50%;
   width: 1.8em;
   height: 1.8em;
-
 }
 
 .counterBtn:not(.counterBtn.disabled):hover {
@@ -320,11 +286,11 @@ ul {
   height: 4em;
   border: none;
   border-radius: 50%;
-  background-color: #E41D58;
+  background-color: var(--main-color);
   color: white;
   font-size: 1em;
   position: absolute;
-  right: 0.7em;
+  right: 0.9em;
   top: 0.7em;
   cursor: pointer;
 }
@@ -333,7 +299,6 @@ ul {
 .sideMenu{
   padding: 0.5em;
 }
-
 
 .sideMenu a {
   padding-right: 1em;
@@ -362,20 +327,25 @@ footer {
   background-color: var(--background-hover);
   padding: 1em 2em;
 }
+footer li{
+  padding:0.5em 0;
+}
 footer a:hover {
-  color: #E41D58;
+  color: var(--main-color);
+  text-decoration: underline;
 }
 footer h6 {
   font-weight: 600;
   padding: 0.6em 0;
 }
 #footerShared>div {
-  
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
 #copyright{
   justify-content: space-between;
+  border-top: 1px solid grey;
+  padding-top: 0.5em;
 }
 .copyright-right i {
   padding-right: 0.5em;
@@ -400,6 +370,11 @@ footer h6 {
     width: 80% !important;
     margin-bottom: 1em !important;
   }
+  .cin, .cout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   #dateDropdown.myDropdown.show {
     width: 80% !important;
     left: 2em;
@@ -418,8 +393,11 @@ footer h6 {
     padding: 0 !important;
   }
   #footerMobile {
-    padding-top:1em ;
+    padding:1em ;
     border-top: 1px solid grey;
+    background-color: white;
+    position: sticky;
+    bottom: 0;
   }
   #footerShared>div {
     border-bottom: 1px solid grey;
@@ -427,8 +405,6 @@ footer h6 {
   #copyright {
     justify-content: flex-end;
   }
-
- 
   .calendarGrid {
     flex-direction: column;
   }
