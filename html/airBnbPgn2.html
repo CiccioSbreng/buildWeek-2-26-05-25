@@ -21,32 +21,26 @@
 <body>
 
   <!-- SEZIONE HEADER -->
-  <header class="row m-auto px-lg-4 py-lg-3 ">
-
-    <!-- Container Logo (visibile solo su schermi grandi) -->
-    <div class="logoContainer col-lg-2 d-none d-lg-block">
-      <a href="#" class="logo">
+  <header class="row m-auto px-lg-4 py-lg-3">
+    <div class="logoContainer col-2 d-block">
+      <a href="airBnb.html" class="logo">
         <img src="/assets/logo-pink.png" alt="logo" class="logoImg d-block w-50">
       </a>
     </div>
 
-    <!-- Pulsante Ricerca Mobile (visibile solo su schermi piccoli) -->
-    <button id="toggleReservationBar" class="col-sm-11 d-lg-none ">
+    <!-- button visibile solo su mobile -->
+    <button id="toggleReservationBar" class="col-sm-9 d-lg-none ">
       <span> <i class="bi bi-search"></i> Discover</span>
     </button>
 
-    <!-- Barra di Prenotazione Principale -->
     <div id="reservationBar" class="reservationBar col-lg-7 d-none d-lg-flex">
 
-      <!-- Campo Località con Dropdown -->
-      <div class="resField dropdown" data-bs-toggle="dropdown">
+      <div class="resField dropdown" data-bs-toggle="dropdown"> <!-- location -->
         <label for="resSearch">Location</label>
-        <input type="search" id="resSearch" placeholder="Where are you going?">
-
-        <!-- Menu Dropdown Località -->
-        <ul class="dropdown-menu animateDropdown location">
+        <input type="search" id="resSearch" placeholder="Where to?">
+        <ul class="dropdown-menu animateDropdown location"> <!--location dropdown-->
           <h3 class="dropdpwnTitle">Top 5</h3>
-          <li><a class="dropdown-item" href="#">Location1</a></li>
+          <li><a class="dropdown-item" href="airBnbPgn2.html">Genova</a></li>
           <li><a class="dropdown-item" href="#">Location2</a></li>
           <li><a class="dropdown-item" href="#">Location3</a></li>
           <li><a class="dropdown-item" href="#">Location4</a></li>
@@ -54,39 +48,35 @@
         </ul>
       </div>
 
-      <!-- Campo Data Check-in -->
-      <div class="resField">
+      <div class="resField cin"> <!-- check-in -->
         <label for="resCheckIn">Check-in</label>
         <input type="text" id="resCheckIn" placeholder="Check-in" readonly>
       </div>
 
-      <!-- Campo Data Check-out -->
-      <div class="resField">
+      <div class="resField cout"> <!-- check-out -->
         <label for="resCheckOut">Check-out</label>
         <input type="text" id="resCheckOut" placeholder="Check-out" readonly>
       </div>
 
-      <!-- Dropdown Selettore Date -->
       <div class="myDropdown" id="dateDropdown">
+
         <div class="calendarGrid">
-          <!-- Calendario Check-in -->
           <div id="checkInCalendar">
+            <!-- calendario check-in desktop-->
           </div>
-          <!-- Calendario Check-out -->
           <div id="checkOutCalendar">
+            <!-- calendario check-out desktop-->
           </div>
         </div>
+
       </div>
 
-      <!-- Campo Selezione Ospiti -->
       <div class="resField" id="dropdownWrapper">
         <label for="guestInput">Who</label>
         <input type="text" id="guestInput" placeholder="1 Adult" readonly />
 
-        <!-- Dropdown Contatore Ospiti -->
-        <div class="myDropdown" id="guestDropdown">
+        <div class="myDropdown" id="guestDropdown"> <!-- dropdown guests OK -->
 
-          <!-- Contatore Adulti -->
           <div class="guestRow">
             <span>Adults</span>
             <div class="counter">
@@ -96,7 +86,6 @@
             </div>
           </div>
 
-          <!-- Contatore Bambini -->
           <div class="guestRow">
             <span>Children</span>
             <div class="counter">
@@ -106,7 +95,6 @@
             </div>
           </div>
 
-          <!-- Contatore Neonati -->
           <div class="guestRow">
             <span>Infants</span>
             <div class="counter">
@@ -116,7 +104,6 @@
             </div>
           </div>
 
-          <!-- Contatore Animali Domestici -->
           <div class="guestRow">
             <span>Pets</span>
             <div class="counter">
@@ -126,29 +113,25 @@
             </div>
           </div>
 
-        </div>
-
-        <!-- Pulsante Ricerca -->
-        <button type="button" class="searchBtn"><i class="bi bi-search"></i></button>
+        </div> <!-- fine dropdown guests -->
       </div>
 
-    </div>
+      <button type="button" class="searchBtn"><i class="bi bi-search"></i></button>
 
-    <!-- Menu Laterale (visibile solo su schermi grandi) -->
+    </div> <!-- fine reservationBar -->
+
+    <!-- side menu OK -->
     <div class="sideMenu d-none d-lg-flex col-lg-2 align-items-center">
 
-      <!-- Link Diventa Host -->
       <a href="#">Become Host</a>
 
-      <!-- Link Icona Globo -->
       <a href="#footer" title="about us"><i class="bi bi-globe"></i></a>
 
-      <!-- Dropdown Profilo Utente -->
+
       <div class="dropdown">
         <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="bi bi-person-circle"></i>
         </button>
-        <!-- Elementi Menu Dropdown -->
         <ul class="dropdown-menu">
           <li>
             <a class="dropdown-item" href="#">
@@ -175,67 +158,74 @@
     </div>
 
   </header>
-
-
-  <!-- SEZIONE SECTION CLASSheader-stays  PAGINA -->
-  <div class="custom-container">
-    <section class="header-stays d-flex flex-column gap-3 ">
-
-      <!-- Conteggio Risultati -->
-      <span>10 Stays</span>
-
-      <!-- Titolo Pagina con Pulsante Aggiungi -->
-      <div class="d-flex align-items-center  ">
-
-        <h1 class="me-2">Stays in Genova</h1>
-        <button class="btn-plus">
-          <i class="bi bi-plus-circle-fill"></i>
-        </button>
-      </div>
-
-      <!-- Pulsanti Navigazione Filtri -->
-      <nav class="btn-home">
-        <button type="button" class="btn btn-outline-dark">Case disponibili</button>
-        <button type="button" class="btn btn-outline-dark">Case prenotate</button>
-        <button type="button" class="btn btn-outline-dark">Tutte le case</button>
-      </nav>
-
-      <!-- Messaggi<div class="content"> Informativi -->
-      <p>Inserisci le date e il numero di ospiti per vedere il prezzo totale a notte.</p> <br>
-      <p>Consulta le restrizioni COVID-19 prima di prenotare.</p>
-    </section>
-  </div>
-
-  <!-- SEZIONE CONTENUTO PRINCIPALE -->
   <main>
-    <div class="container">
+    <!-- SEZIONE SECTION CLASSheader-stays  PAGINA -->
+    <div class="custom-container">
+      <section class="header-stays ">
+
+        <!-- Conteggio Risultati -->
+        <span>10 Stays</span>
+
+        <!-- Titolo Pagina con Pulsante Aggiungi -->
+        <div class="d-flex align-items-center sez-tit ">
+
+          <h1 class="me-2">Stays in Genova</h1>
+          <button class="btn-plus">
+            <i class="bi bi-plus-circle-fill"></i>
+          </button>
+        </div>
+
+        <!-- Pulsanti Navigazione Filtri -->
+        <nav class="btn-home">
+          <a href="airBnb3.html"><button type="button" class="btn btn-outline-dark">Available houses</button></a>
+          <button type="button" class="btn btn-outline-dark">Booked houses</button>
+          <a href="https://www.airbnb.it/s/Genova/homes"><button type="button" class="btn btn-outline-dark">All
+              houses</button></a>
+        </nav>
+
+        <!-- Messaggi<div class="content"> Informativi -->
+        <p>Enter dates and number of guests to see the total price per night.</p> <br>
+        <p>Review COVID-19 travel restrictions before you book. Learn more</p>
+      </section>
+    </div>
+
+    <!-- SEZIONE CONTENUTO PRINCIPALE -->
+
+    <div class="container card-cont">
       <div class="row">
         <!-- Scheda Proprietà 1 -->
         <div class="col-xxl-5ths col-xl-5ths col-lg-5ths col-md-4 col-sm-6 col-xs-12">
           <div class="card">
             <!-- Carosello Immagini -->
-            <div id="carousel6" class="carousel slide">
+            <div id="carousel-1" class="carousel slide">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="https://t3.ftcdn.net/jpg/01/00/79/90/360_F_100799049_H8GwxLH2dZGuUUjeGP1hEFdiFolgWqfe.jpg"
-                    class="img-fluid carousel-img" alt="">
+                  <img src="/assets/1.webp" class="img-fluid carousel-img" alt="Stanza Genova">
                 </div>
                 <div class="carousel-item">
-                  <img src="https://www.giuliophoto.it/easyUp/image/22_img_3795_883d.jpg" class="img-fluid carousel-img"
-                    alt="">
+                  <img src="/assets/2.webp" class="img-fluid carousel-img" alt="">
                 </div>
                 <div class="carousel-item">
-                  <img src="https://www.giuliophoto.it/easyUp/image/22_img_3795_883d.jpg" class="img-fluid carousel-img"
-                    alt="">
+                  <img src="/assets/3.webp" class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img src="/assets/4.webp" class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img src="/assets/5.webp" class="img-fluid carousel-img" alt="">
                 </div>
               </div>
             </div>
 
             <!-- Informazioni Proprietà -->
             <div class="card-body HostName typeOfAccomodation">
-              <p><i class="bi bi-star-fill"></i> 2.75 (4 recensioni)</p>
-              <p>Appartamento - Genova</p>
-              <p class="card-desc">The Windy House</p>
+              <p><i class="bi bi-star-fill"></i>4,6 (73 Recensioni)</p>
+              <p>Blarmor home</p>
+              <a href="airBnb3.html">
+                <p class="card-desc">House-Host:Erica-Perfect place
+                </p>
+              </a>
+
             </div>
           </div>
         </div>
@@ -244,23 +234,42 @@
         <div class="col-xxl-5ths col-xl-5ths col-lg-5ths col-md-4 col-sm-6 col-xs-12">
           <div class="card">
             <!-- Carosello Immagini -->
-            <div id="carousel7" class="carousel slide">
+            <div id="carousel-2" class="carousel slide">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="https://t3.ftcdn.net/jpg/01/00/79/90/360_F_100799049_H8GwxLH2dZGuUUjeGP1hEFdiFolgWqfe.jpg"
-                    class="img-fluid" alt="">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTMxNzU4NzQxNTk4ODc5OTY3NA==/original/13db2b11-9b9f-46bd-b502-e2e20cddc7e3.jpeg"
+                    class="img-fluid carousel-img" alt="Stanza Genova">
                 </div>
                 <div class="carousel-item">
-                  <img src="https://www.giuliophoto.it/easyUp/image/22_img_3795_883d.jpg" class="img-fluid" alt="">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTMxNzU4NzQxNTk4ODc5OTY3NA==/original/9842e8db-6b57-4c5f-acee-17a66d799252.jpeg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/hosting/Hosting-1317587415988799674/original/cc0d4830-954c-4e50-8ed9-e2b503bd7375.jpeg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTMxNzU4NzQxNTk4ODc5OTY3NA%3D%3D/original/a3ff41e2-1ad5-4ae7-83f9-231425a51987.jpeg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTMxNzU4NzQxNTk4ODc5OTY3NA==/original/ecf67edd-536f-463c-9fb3-5d74c3c0132a.jpeg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
                 </div>
               </div>
             </div>
-
             <!-- Informazioni Proprietà -->
             <div class="card-body HostName typeOfAccomodation">
-              <p><i class="bi bi-star-fill"></i> 0 recensioni</p>
-              <p>Appartamento - Genova</p>
-              <p class="card-desc">Wonderful House</p>
+              <p><i class="bi bi-star-fill"></i> 5,0 4 ratings</p>
+              <p>Apartment Genoa</p>
+              <a href="https://www.airbnb.it/rooms/1317587415988799674">
+                <p class="card-desc">Genoa Airport Green Corner</p>
+              </a>
             </div>
           </div>
         </div>
@@ -272,20 +281,40 @@
             <div id="carousel8" class="carousel slide">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="https://t3.ftcdn.net/jpg/01/00/79/90/360_F_100799049_H8GwxLH2dZGuUUjeGP1hEFdiFolgWqfe.jpg"
-                    class="img-fluid" alt="">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/miso/Hosting-1142759430579542388/original/9f7d2165-ab07-4ec5-8b3e-12946cefba7f.jpeg?im_w=1200"
+                    class="img-fluid carousel-img" alt="Stanza Genova">
                 </div>
                 <div class="carousel-item">
-                  <img src="https://www.giuliophoto.it/easyUp/image/22_img_3795_883d.jpg" class="img-fluid" alt="">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/miso/Hosting-1142759430579542388/original/b8c40258-a35a-45ef-b3b4-60ee4f1c4ad9.jpeg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/miso/Hosting-1142759430579542388/original/aa28616f-015a-477d-814e-d7fbfcd777c2.jpeg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/miso/Hosting-1142759430579542388/original/311ab135-a769-4ab7-8590-93a6c32b6af3.jpeg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/miso/Hosting-1142759430579542388/original/0c00e4f3-e204-4789-b41b-3d68cc6962e2.jpeg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
                 </div>
               </div>
             </div>
 
             <!-- Informazioni Proprietà -->
             <div class="card-body HostName typeOfAccomodation">
-              <p><i class="bi bi-star-fill"></i> 0 recensioni</p>
-              <p>Appartamento - Genova</p>
-              <p class="card-desc">The Time Travel</p>
+              <p><i class="bi bi-star-fill"></i>4.73 33 ratings</p>
+              <p>Apartment Genova</p>
+              <a href="https://www.airbnb.it/rooms/1142759430579542388">
+                <p class="card-desc">Garibaldino at the Palazzo Rolli </p>
+              </a>
             </div>
           </div>
         </div>
@@ -294,48 +323,90 @@
         <div class="col-xxl-5ths col-xl-5ths col-lg-5ths col-md-4 col-sm-6 col-xs-12">
           <div class="card">
             <!-- Carosello Immagini -->
-            <div id="carousel9" class="carousel slide">
+            <div id="carousel-4" class="carousel slide">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="https://t3.ftcdn.net/jpg/01/00/79/90/360_F_100799049_H8GwxLH2dZGuUUjeGP1hEFdiFolgWqfe.jpg"
-                    class="img-fluid" alt="">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTM2MTY2NDk2NTc5NDI0MDM0Mw==/original/d4769f33-5134-4862-b244-a05917fabc6b.jpeg?im_w=1200"
+                    class="img-fluid carousel-img" alt="Stanza Genova">
                 </div>
                 <div class="carousel-item">
-                  <img src="https://www.giuliophoto.it/easyUp/image/22_img_3795_883d.jpg" class="img-fluid" alt="">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/prohost-api/Hosting-1361664965794240343/original/8a434a9c-d09d-428d-bd72-8f29a1cf1926.jpeg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://a0.muscache.com/im/pictures/f972a5cf-0b9e-4395-8889-df0687672831.jpg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/prohost-api/Hosting-1361664965794240343/original/da6490e3-ee79-4574-af60-8cfdc65acff2.jpeg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/prohost-api/Hosting-1361664965794240343/original/7d3ac742-c72b-4dfd-b0e4-89ffd258ad18.jpeg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
                 </div>
               </div>
             </div>
 
             <!-- Informazioni Proprietà -->
             <div class="card-body HostName typeOfAccomodation">
-              <p><i class="bi bi-star-fill"></i> 0 recensioni</p>
-              <p>Appartamento - Genova</p>
-              <p class="card-desc">S.Olcese Dream</p>
+              <p><i class="bi bi-star-fill"></i>5.0 6 ratings</p>
+              <p>Apartment · Genoa</p>
+              <a href="https://www.airbnb.it/rooms/1361664965794240343">
+                <p class="card-desc">City center | Loft | Free Wi-Fi</p>
+              </a>
             </div>
           </div>
         </div>
 
         <!-- Scheda Proprietà 5 -->
+
+
+
         <div class="col-xxl-5ths col-xl-5ths col-lg-5ths col-md-4 col-sm-6 col-xs-12">
           <div class="card">
             <!-- Carosello Immagini -->
-            <div id="carousel10" class="carousel slide">
+            <div id="carousel-5" class="carousel slide">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="https://t3.ftcdn.net/jpg/01/00/79/90/360_F_100799049_H8GwxLH2dZGuUUjeGP1hEFdiFolgWqfe.jpg"
-                    class="img-fluid" alt="">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/hosting/Hosting-1244872250682244936/original/cc2fffc1-a821-4988-8461-c6e64f1dde93.jpeg?im_w=1200"
+                    class="img-fluid carousel-img" alt="Stanza Genova">
                 </div>
                 <div class="carousel-item">
-                  <img src="https://www.giuliophoto.it/easyUp/image/22_img_3795_883d.jpg" class="img-fluid" alt="">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/hosting/Hosting-1244872250682244936/original/c0dabc76-4a51-46b1-ad5f-1b053261c9af.jpeg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/hosting/Hosting-1244872250682244936/original/b4ec0b7b-f54d-44e3-bedc-71cbbdedcbaf.jpeg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/hosting/Hosting-1244872250682244936/original/30500423-5f8d-4bd6-ab16-f0f181dd14f9.jpeg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/hosting/Hosting-1244872250682244936/original/7b70454c-bd9f-496d-b130-a7d3e395c133.jpeg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
                 </div>
               </div>
             </div>
 
             <!-- Informazioni Proprietà -->
             <div class="card-body HostName typeOfAccomodation">
-              <p><i class="bi bi-star-fill"></i> 0 recensioni</p>
-              <p>Appartamento - Genova</p>
-              <p class="card-desc">Bassi Student Residence</p>
+              <p><i class="bi bi-star-fill"></i>4,88 17 ratings</p>
+              <p>Apartment · Genoa</p>
+              <a href="https://www.airbnb.it/rooms/1244872250682244936">
+                <p class="card-desc">Enea's little house</p>
+              </a>
             </div>
           </div>
         </div>
@@ -347,21 +418,40 @@
             <div id="carousel1" class="carousel slide">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="https://t3.ftcdn.net/jpg/01/00/79/90/360_F_100799049_H8GwxLH2dZGuUUjeGP1hEFdiFolgWqfe.jpg"
+                  <img
+                    src="https://a0.muscache.com/im/pictures/hosting/Hosting-860849701540713593/original/c8e20927-76f4-4da1-a479-65ab1ab4249f.jpeg?im_w=1200"
+                    class="img-fluid carousel-img" alt="Stanza Genova">
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/miso/Hosting-860849701540713593/original/1631f7ea-71bd-44c8-9545-04cda93a413c.jpeg?im_w=480"
                     class="img-fluid carousel-img" alt="">
                 </div>
                 <div class="carousel-item">
-                  <img src="https://www.giuliophoto.it/easyUp/image/22_img_3795_883d.jpg" class="img-fluid carousel-img"
-                    alt="">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/hosting/Hosting-860849701540713593/original/43dff873-6ece-4083-b6ab-2542e14be91b.jpeg?im_w=480"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/hosting/Hosting-860849701540713593/original/b535c623-4050-4fa9-ad50-489565f64f36.jpeg?im_w=480"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/hosting/Hosting-860849701540713593/original/53768ee0-6645-49c5-872b-24e55cc53ace.jpeg?im_w=480"
+                    class="img-fluid carousel-img" alt="">
                 </div>
               </div>
             </div>
 
             <!-- Informazioni Proprietà -->
             <div class="card-body ">
-              <p><i class="bi bi-star-fill"></i> 2.75 (4 recensioni)</p>
-              <p>Appartamento - Genova</p>
-              <p class="card-desc">The Windy House</p>
+              <p><i class="bi bi-star-fill"></i> 4,97 92 ratings</p>
+              <p>Apartment · Genoa</p>
+              <a href="https://www.airbnb.it/rooms/860849701540713593">
+                <p class="card-desc">Nanni's Penthouse </p>
+              </a>
             </div>
           </div>
         </div>
@@ -370,23 +460,42 @@
         <div class="col-xxl-5ths col-xl-5ths col-lg-5ths col-md-4 col-sm-6 col-xs-12">
           <div class="card">
             <!-- Carosello Immagini -->
-            <div id="carousel2" class="carousel slide">
+            <div id="carousel-7" class="carousel slide">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="https://t3.ftcdn.net/jpg/01/00/79/90/360_F_100799049_H8GwxLH2dZGuUUjeGP1hEFdiFolgWqfe.jpg"
-                    class="img-fluid" alt="">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/miso/Hosting-909369723846144529/original/20d6bcea-3d39-43f7-bddd-7c5fc53236ec.jpeg?im_w=1200"
+                    class="img-fluid carousel-img" alt="Stanza Genova">
                 </div>
                 <div class="carousel-item">
-                  <img src="https://www.giuliophoto.it/easyUp/image/22_img_3795_883d.jpg" class="img-fluid" alt="">
+                  <img src="https://a0.muscache.com/im/pictures/fd105363-cc80-4a1f-ae44-ccf3f6859e10.jpg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/hosting/Hosting-909369723846144529/original/0d754844-ceca-4707-859f-e5964193a4b4.jpeg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/hosting/Hosting-909369723846144529/original/5de2abd8-021f-4541-b9c6-4439a90ebcd2.jpeg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/hosting/Hosting-909369723846144529/original/c2f95004-8f87-4a9a-b993-42c9bbd61f0e.jpeg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
                 </div>
               </div>
             </div>
 
             <!-- Informazioni Proprietà -->
             <div class="card-body HostName typeOfAccomodation">
-              <p><i class="bi bi-star-fill"></i> 0 recensioni</p>
-              <p>Appartamento - Genova</p>
-              <p class="card-desc">Wonderful House</p>
+              <p><i class="bi bi-star-fill"></i>4,97 129 ratings</p>
+              <p>Apartment Genoa</p>
+              <a href="https://www.airbnb.it/rooms/909369723846144529">
+                <p class="card-desc">Casa Lele Entire Apartment</p>
+              </a>
             </div>
           </div>
         </div>
@@ -395,23 +504,41 @@
         <div class="col-xxl-5ths col-xl-5ths col-lg-5ths col-md-4 col-sm-6 col-xs-12">
           <div class="card">
             <!-- Carosello Immagini -->
-            <div id="carousel3" class="carousel slide">
+            <div id="carousel-8" class="carousel slide">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="https://t3.ftcdn.net/jpg/01/00/79/90/360_F_100799049_H8GwxLH2dZGuUUjeGP1hEFdiFolgWqfe.jpg"
-                    class="img-fluid" alt="">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/miso/Hosting-1003405290873583562/original/0bee8682-cd6d-41fd-a82e-e154576876c5.jpeg?im_w=1200"
+                    class="img-fluid carousel-img" alt="Stanza Genova">
                 </div>
                 <div class="carousel-item">
-                  <img src="https://www.giuliophoto.it/easyUp/image/22_img_3795_883d.jpg" class="img-fluid" alt="">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTAwMzQwNTI5MDg3MzU4MzU2Mg%3D%3D/original/3a8bbfbd-3781-4456-8a27-84b422e20532.jpeg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://a0.muscache.com/im/pictures/f6b00987-d8af-45c2-ac9d-ac60fd1c1401.jpg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://a0.muscache.com/im/pictures/0af7b0da-1816-4c63-a6a2-e23bd9dcb45e.jpg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/hosting/Hosting-1003405290873583562/original/8646c6a2-4eb3-412f-9dfb-a3c635d7389a.jpeg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
                 </div>
               </div>
             </div>
 
             <!-- Informazioni Proprietà -->
             <div class="card-body HostName typeOfAccomodation">
-              <p><i class="bi bi-star-fill"></i> 0 recensioni</p>
-              <p>Appartamento - Genova</p>
-              <p class="card-desc">The Time Travel</p>
+              <p><i class="bi bi-star-fill"></i>4,97 129 ratings</p>
+              <p>Apartment Genoa</p>
+              <a href="https://www.airbnb.it/rooms/1003405290873583562">
+                <p class="card-desc">Vanessa's House Free Parking</p>
+              </a>
             </div>
           </div>
         </div>
@@ -420,23 +547,37 @@
         <div class="col-xxl-5ths col-xl-5ths col-lg-5ths col-md-4 col-sm-6 col-xs-12">
           <div class="card">
             <!-- Carosello Immagini -->
-            <div id="carousel4" class="carousel slide">
+            <div id="carousel-9" class="carousel slide">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="https://t3.ftcdn.net/jpg/01/00/79/90/360_F_100799049_H8GwxLH2dZGuUUjeGP1hEFdiFolgWqfe.jpg"
-                    class="img-fluid" alt="">
+                  <img src="https://a0.muscache.com/im/pictures/5e87c630-e557-4f81-8ea2-ddcd91496937.jpg?im_w=1200"
+                    class="img-fluid carousel-img" alt="Stanza Genova">
                 </div>
                 <div class="carousel-item">
-                  <img src="https://www.giuliophoto.it/easyUp/image/22_img_3795_883d.jpg" class="img-fluid" alt="">
+                  <img src="https://a0.muscache.com/im/pictures/e050747f-ff9d-45ec-bea9-93b54fa7402a.jpg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://a0.muscache.com/im/pictures/6d2125aa-711b-4209-89f2-80e427f7e91c.jpg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://a0.muscache.com/im/pictures/948c4d1b-6ddb-4254-94e5-1f808ed99350.jpg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://a0.muscache.com/im/pictures/25173d42-feb3-4f4e-b56f-4ab385f4d72f.jpg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
                 </div>
               </div>
             </div>
 
             <!-- Informazioni Proprietà -->
             <div class="card-body HostName typeOfAccomodation">
-              <p><i class="bi bi-star-fill"></i> 0 recensioni</p>
-              <p>Appartamento - Genova</p>
-              <p class="card-desc">S.Olcese Dream</p>
+              <p><i class="bi bi-star-fill"></i>4.79 299 ratings</p>
+              <p>Apartment Genoa</p>
+              <a href=" https://www.airbnb.it/rooms/574503082794298117"></a>
+              <p class="card-desc">Sweet-Home-Acquario</p>
             </div>
           </div>
         </div>
@@ -445,106 +586,46 @@
         <div class="col-xxl-5ths col-xl-5ths col-lg-5ths col-md-4 col-sm-6 col-xs-12">
           <div class="card">
             <!-- Carosello Immagini -->
-            <div id="carousel5" class="carousel slide">
+            <div id="carousel-10" class="carousel slide">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="https://t3.ftcdn.net/jpg/01/00/79/90/360_F_100799049_H8GwxLH2dZGuUUjeGP1hEFdiFolgWqfe.jpg"
-                    class="img-fluid" alt="">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MzA2MzI1ODE%3D/original/280b43ea-039d-47d7-b908-0e401b835325.jpeg?im_w=1200"
+                    class="img-fluid carousel-img" alt="Stanza Genova">
                 </div>
                 <div class="carousel-item">
-                  <img src="https://www.giuliophoto.it/easyUp/image/22_img_3795_883d.jpg" class="img-fluid" alt="">
+                  <img src="https://a0.muscache.com/im/pictures/d214e45d-440e-4445-a1ab-2ff081b3e5a8.jpg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/miso/Hosting-30632581/original/a2267b21-4e8a-4bae-883a-c0d8ff050c82.jpeg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://a0.muscache.com/im/pictures/82db2757-4d4d-4178-acee-0c0fb3731a84.jpg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://a0.muscache.com/im/pictures/80483eb1-ba8f-4cd4-84d2-f4800262ce54.jpg?im_w=720"
+                    class="img-fluid carousel-img" alt="">
                 </div>
               </div>
             </div>
 
             <!-- Informazioni Proprietà -->
             <div class="card-body HostName typeOfAccomodation">
-              <p><i class="bi bi-star-fill"></i> 0 recensioni</p>
-              <p>Appartamento - Genova</p>
-              <p class="card-desc">Bassi Student Residence</p>
+              <p><i class="bi bi-star-fill"></i>4.93 398 ratings</p>
+              <p>Apartment Genoa</p>
+              <a href="https://www.airbnb.it/rooms/30632581?check_in=2025-11-07&check_out=2025-11-09&adults=1">
+                <p class="card-desc">By the Sea in Boccadasse</p>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </main>
 
-  <!-- SEZIONE FOOTER -->
-  <footer>
-
-    <!-- Link Footer Principali -->
-    <section id="footerShared" class="row">
-
-      <!-- Sezione Assistenza -->
-      <div id="assistenza" class="col-sm-12 col-lg-4">
-        <h6>Assistenza</h6>
-        <ul>
-          <li><a href="#">Centro assistenza</a></li>
-          <li><a href="#">AirCover</a></li>
-          <li><a href="#">Antidiscriminazione</a></li>
-          <li><a href="#">Opzioni di cancellazione</a></li>
-          <li><a href="#">Segnala problemi nel quartiere</a></li>
-        </ul>
-      </div>
-
-      <!-- Sezione Ospitalità -->
-      <div id="ospitare" class="col-sm-12 col-lg-4">
-        <h6>Ospitare</h6>
-        <ul>
-          <li><a href="#">Apri un Airbnb</a></li>
-          <li><a href="#">AirCover per gli ospiti</a></li>
-          <li><a href="#">Risorse per gli host</a></li>
-          <li><a href="#">Forum della commuity</a></li>
-          <li><a href="#">Partecipazione a una lezione gratuita sull'ospitalità</a></li>
-          <li><a href="#">Trova un co-host</a></li>
-        </ul>
-      </div>
-
-      <!-- Sezione Azienda Airbnb -->
-      <div id="ospitare1" class="col-sm-12 col-lg-4">
-        <h6>Airbnb</h6>
-        <ul>
-          <li><a href="#">2025 Summer Release</a></li>
-          <li><a href="#">Newsroom</a></li>
-          <li><a href="#">Nuove funzionalità</a></li>
-          <li><a href="#">Opportunità di lavoro</a></li>
-          <li><a href="#">Investitori</a></li>
-          <li><a href="#">Gift Card</a></li>
-          <li><a href="#">Soggiorni con Airbnb.org</a></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Sezione Copyright e Lingua/Valuta -->
-    <section id="copyright" class="row">
-
-      <!-- Testo Copyright (solo desktop) -->
-      <div class="copyright-left d-sm-none d-lg-block col-lg-8">
-        <p>© 2025 Airbnb, Inc. &sdot; Privacy &sdot; Termini &sdot; Mappa del sito &sdot; Come funziona il sito &sdot;
-          Dettagli dell'azienda</p>
-      </div>
-
-      <!-- Link Lingua, Valuta e Social Media -->
-      <div class="copyright-right d-sm-flex col-sm-11 col-lg-4 justify-content-around row">
-        <!-- Selettore Lingua -->
-        <div class="col-sm-3 col-lg-4">
-          <i class="bi bi-globe"></i> <span>Italiano (IT)</span>
-        </div>
-        <!-- Selettore Valuta -->
-        <div class="col-sm-3 col-lg-4">
-          <i class="bi bi-currency-euro"></i><span>EUR</span>
-        </div>
-        <!-- Icone Social Media -->
-        <div class="social col-sm-3 col-lg-4">
-          <i class="bi bi-facebook"></i>
-          <i class="bi bi-twitter-x"></i>
-          <i class="bi bi-instagram"></i>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- Navigazione Footer Mobile -->
     <section id="footerMobile" class="col-sm-12 d-lg-none">
       <ul class="d-flex justify-content-around">
         <li><a href="#"><i class="bi bi-search"></i> Discover</a></li>
@@ -552,11 +633,77 @@
         <li><a href="#"><i class="bi bi-person-circle"></i> Log-in </a></li>
       </ul>
     </section>
-  </footer>
 
-  <!-- Librerie JavaScript -->
+  </main>
+
+  <!-- SEZIONE FOOTER -->
+  <footer>
+
+    <section id="footerShared" class="row">
+      <div id="assistenza" class="col-sm-12 col-lg-4">
+        <h6>Support</h6>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">AirCover</a></li>
+          <li><a href="#">Anti-discrimination</a></li>
+          <li><a href="#">Disability Support</a></li>
+          <li><a href="#">Cancellation Options</a></li>
+          <li><a href="#">Report neighbourhood concern</a></li>
+        </ul>
+      </div>
+      <div id="ospitare" class="col-sm-12 col-lg-4">
+        <h6>Hosting</h6>
+        <ul>
+          <li><a href="#">Airbnb your home</a></li>
+          <li><a href="#">AirCover for Hosts</a></li>
+          <li><a href="#">Hosting Resources</a></li>
+          <li><a href="#">Community Forum</a></li>
+          <li><a href="#">Join a free Hosting Class</a></li>
+          <li><a href="#">Find a co-host</a></li>
+        </ul>
+      </div>
+      <div id="ospitare-2" class="col-sm-12 col-lg-4">
+        <h6>Airbnb</h6>
+        <ul>
+          <li><a href="#">2025 Summer Release</a></li>
+          <li><a href="#">Newsroom</a></li>
+          <li><a href="#">New Features</a></li>
+          <li><a href="#">Carreers</a></li>
+          <li><a href="#">Investors</a></li>
+          <li><a href="#">Gift Card</a></li>
+          <li><a href="#">Airbnb.org emergency stays</a></li>
+        </ul>
+      </div>
+    </section>
+    <section id="copyright" class="row">
+
+      <div class="copyright-left d-sm-none d-lg-block col-lg-8">
+        <p>© 2025 Airbnb, Inc. &sdot; Privacy &sdot; Terms &sdot; Sitemap &sdot; Company details</p>
+
+      </div>
+
+      <div class="copyright-right d-sm-flex col-sm-11 col-lg-4 justify-content-around row">
+        <div class="col-sm-3 col-lg-4">
+          <i class="bi bi-globe"></i> <span>English (UK)</span>
+        </div>
+        <div class="col-sm-3 col-lg-4">
+          <i class="bi bi-currency-pound"></i><span>EUR</span>
+        </div>
+        <div class="social col-sm-3 col-lg-4">
+          <i class="bi bi-facebook"></i>
+          <i class="bi bi-twitter-x"></i>
+          <i class="bi bi-instagram"></i>
+        </div>
+      </div>
+    </section>
+  </footer>
+  <!-- ************ da includere **************** -->
+  <!-- flatpikr -->
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- bs -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
 
   <!-- JavaScript Personalizzato -->
   <script src="/javascript/carousel.js"></script>

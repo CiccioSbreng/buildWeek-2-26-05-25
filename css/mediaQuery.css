@@ -1,59 +1,19 @@
-/* Media queries per dispositivi piccoli */
+/* ====================================
+   MEDIA QUERIES (responsive.css)
+   ==================================== */
+
+/* --- XS: Fino a 575.98px --- */
 @media (max-width: 575.98px) {
+
+    .container,
     .custom-container {
-        padding-left: 20px;
-        padding-right: 20px;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 100%;
-    }
-
-    .header-stays {
-        padding: 12px 16px;
-        margin: 0;
-        border-radius: 0;
-    }
-
-    h1 {
-        font-size: 1.4rem;
-        margin-bottom: 0;
-    }
-
-    .header-stays span,
-    .header-stays p {
-        font-size: 0.9rem;
-        line-height: 1.4;
-        margin-bottom: 6px;
-    }
-
-    .btn-home {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .btn-home .btn {
-        font-size: 12px;
-        padding: 8px 16px;
+        padding: 8px;
         width: 100%;
     }
 
+    /* Ridotto il margine inferiore per avvicinare le card */
     .card {
-        margin-bottom: 16px;
-    }
-
-    .card-body {
-        padding: 8px !important;
-        margin-bottom: 0;
-    }
-
-    .card-body p {
-        font-size: 13px;
-        margin-bottom: 2px;
-    }
-
-    .card-desc {
-        font-size: 14px;
+        margin-bottom: 6px;
     }
 
     .col-xxl-5ths,
@@ -64,50 +24,33 @@
         flex: 0 0 100%;
         max-width: 100%;
     }
-}
 
-/* Media queries per dispositivi piccoli in orizzontale */
-@media (min-width: 576px) and (max-width: 767.98px) {
-    .custom-container {
-        padding-left: 20px;
-        padding-right: 20px;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 80%;
+    .card-body p {
+        text-align: center;
     }
 
-    h1 {
-        font-size: 1.6rem;
-    }
-
+    /* bottoni in colonna a larghezza piena */
     .btn-home {
         display: flex;
         flex-direction: column;
+        align-items: stretch;
         gap: 8px;
     }
 
     .btn-home .btn {
-        font-size: 13px;
-        padding: 8px 16px;
-        flex: 1;
-        min-width: calc(50% - 4px);
+        width: 100%;
     }
+}
 
+/* --- SM: 576px a 767.98px --- */
+@media (min-width: 576px) and (max-width: 767.98px) {
     .container {
-        padding: 0 16px;
+        padding: 0 10px;
     }
 
-    .card-body {
-        padding: 10px !important;
-        margin-bottom: 8px;
-    }
-
-    .card-body p {
-        font-size: 14px;
-    }
-
-    .card-desc {
-        font-size: 15px;
+    /*riduciamo lo spazio tra le card */
+    .card {
+        margin-bottom: 6px;
     }
 
     .col-xxl-5ths,
@@ -115,63 +58,94 @@
     .col-lg-5ths,
     .col-md-4,
     .col-sm-6 {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-}
-
-/* Media queries per tablet */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .custom-container {
-        align-items: center;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 70%;
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 
-    h1 {
-        font-size: 1.8rem;
+    .card-body p {
+        text-align: center;
+    }
+
+    /* Disposizione dei bottoni in colonna a larghezza piena */
+    .btn-home {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
     }
 
     .btn-home .btn {
-        font-size: 14px;
-        padding: 9px 18px;
+        width: 100%;
     }
+}
 
+/* --- MD: 768px a 991.98px --- */
+@media (min-width: 768px) and (max-width: 991.98px) {
     .container {
         padding: 0 20px;
     }
 
-    .card-body {
-        padding: 0 !important;
-        margin-bottom: 10vh;
+    .col-lg-5ths,
+    .col-md-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
     }
 
     .card-body p {
-        font-size: 15px;
+        text-align: center;
     }
 
-    .card-desc {
-        font-size: 16px;
+    /*la disposizione colonna dei bottoni anche su MD */
+    .btn-home {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
     }
 
-    .col-xxl-5ths,
-    .col-xl-5ths,
-    .col-lg-5ths,
-    .col-md-4 {
-        flex: 0 0 33.3333%;
-        max-width: 33.3333%;
+    .btn-home .btn {
+        width: 100%;
     }
 }
 
-/* Media queries per desktop */
+/* --- LG: 992px a 1199.98px --- */
 @media (min-width: 992px) and (max-width: 1199.98px) {
+    .container {
+        max-width: 95%;
+    }
+
+    .col-lg-5ths {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
+
+    .card-body p {
+        text-align: left;
+    }
+
+    /*forzare i bottoni in colonna anche su LG, decommenta la sezione seguente */
+    /*
+  .btn-home {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  
+  .btn-home .btn {
+    width: 100%;
+  }
+  */
+}
+
+/* --- XL: 1200px e oltre --- */
+@media (min-width: 1200px) {
     .custom-container {
-        padding-left: 60px;
-        padding-right: 60px;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 1140px;
+        max-width: 90%;
+    }
+
+    .container {
+        max-width: 84%;
     }
 
     .col-lg-5ths {
@@ -179,92 +153,37 @@
         max-width: 20%;
     }
 
-    .card img {
-        height: 150px;
-    }
-
-    .card-body {
-        padding: 10px 0;
-    }
-
     .card-body p {
-        font-size: 15px;
+        text-align: left;
     }
 }
 
-/* Media queries per desktop largo */
-@media (min-width: 1200px) and (max-width: 1399.98px) {
-    .col-xl-5ths {
-        flex: 0 0 20%;
-        max-width: 20%;
-    }
-
-    .custom-container {
-
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 1140px;
-    }
-
-    .card img {
-        height: 180px;
-    }
-
-    .card-body {
-        padding: 12px 0;
-    }
-
-    .card-body p {
-        font-size: 16px;
-    }
-
-    .container {
-        max-width: 1140px;
-    }
-}
-
-/* Media queries per desktop molto largo */
+/* --- XXL: 1400px e oltre --- */
 @media (min-width: 1400px) {
     .col-xxl-5ths {
         flex: 0 0 20%;
         max-width: 20%;
     }
 
-    .custom-container {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 1320px;
-    }
-
-    .card img {
-        height: 180px;
-    }
-
-    .card {
-        margin-bottom: 20px;
-    }
-
-    .card-body {
-        padding: 15px 0;
+    .container {
+        max-width: 85%;
     }
 
     .card-body p {
-        font-size: 16px;
+        text-align: left;
     }
 
-    .container {
-        max-width: 1320px;
-    }
-
-}
-
-/* Disabilitazione effetti hover su dispositivi touch */
-@media (hover: none) {
-
-    .card:hover,
-    .card img:hover,
-    .btn-plus:hover {
-        transform: none;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
+    /*forzare i bottoni in colonna anche su XXL, decommenta questa sezione */
+    /*
+  .btn-home {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  
+  .btn-home .btn {
+    width: 100%;
+  }
+  */
 }
