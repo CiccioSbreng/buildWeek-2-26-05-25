@@ -5,17 +5,25 @@
 /* Body */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    color: #333;
+    color: #222222;
     background-color: white;
     margin: 0;
+
 }
 
 /* Header */
 .header-stays {
-    padding: 15px 20px;
+    padding: 0 20px;
     /* 15px top/bottom, 20px laterali */
     background-color: white;
     border-radius: 0 0 12px 12px;
+
+}
+
+.header-stays p {
+    font-size: 0.8em;
+    color: #222222;
+    margin-bottom: 0.5em;
 }
 
 
@@ -41,6 +49,11 @@ body {
 
 .card-cont {
     width: 100%;
+
+}
+
+.card-desc {
+    font-size: 0.8em;
 }
 
 .card img {
@@ -50,6 +63,10 @@ body {
     object-fit: cover;
     width: 100%;
     height: auto;
+      max-width: 100%;
+    height: auto;
+    display: block;
+
 }
 
 .card img:hover {
@@ -58,7 +75,7 @@ body {
 
 /* Pulsanti */
 .btn-plus {
-    font-size: 32px;
+    font-size: 20px;
     color: #ff385c;
     background: none;
     border: none;
@@ -78,10 +95,11 @@ body {
     transform: translateY(-1px);
 }
 
+
 /* Contenuto interno delle card */
 .card-body {
     padding: 0 !important;
-    margin-bottom: 13vh;
+    margin-bottom: 10vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -89,23 +107,29 @@ body {
 }
 
 .card-body p {
-    margin-bottom: 3px;
-    font-size: 17px;
+    font-size: 0.75em;
+    /* base per schermi piccoli */
+    text-align: center;
 }
 
 .card-desc {
+    font-size: 0.8em;
     font-weight: 200;
     color: #222222;
-
 }
 
 .bi-star-fill {
     color: #ff385c;
 }
 
-/* Allineamento del nav.btn-home nell'header (se posizionato direttamente dentro .header-stays) */
+.sez-tit {
+    margin-bottom: 2em;
+}
+
+
 .header-stays>.btn-home {
     margin-left: 0;
+    margin-bottom: 1.5em;
 }
 
 /* Griglia per 5 colonne in versioni grandi */
