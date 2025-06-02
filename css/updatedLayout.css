@@ -1,6 +1,7 @@
 :root {
   --background-hover: rgb(241, 241, 242);
   --main-color: #E41D58;
+  --footer-text-notClicked: #B2B2B2
 }
 * {
   box-sizing: border-box;
@@ -13,19 +14,18 @@ a {
 }
 
 
-header {
+#header {
   align-items: center;
   justify-content: space-between;
-  background: white;
-
+  background: #fbfbfbf7;
+  border-bottom: 1px solid var(--background-hover);
+  
   width: 100%;
-
-  /* se vogliamo l'header sticky va messo dentro al main e vanno abilitate queste due righe di seguito 
   position: sticky;
-  top: 0;
-   */
+  top: 0; 
+  margin-bottom: 1em;
 }
-header .row {
+#header .row {
   align-items: center;
 }
 
@@ -38,6 +38,7 @@ header .row {
 }
 
 
+
 /* ************* barra di ricerca ********************* */
 .reservationBar {
   padding: 0;
@@ -47,6 +48,7 @@ header .row {
   justify-content: space-between;
   background-color: white;
   position: relative;
+  overflow: visible;
 }
 
 
@@ -327,6 +329,37 @@ footer {
   background-color: var(--background-hover);
   padding: 1em 2em;
 }
+
+#inspo{
+  width: 80%;
+  margin: auto;
+}
+#inspo nav {
+  margin-bottom: 1em;
+  border-bottom: 1px solid grey;
+}
+#inspo button {
+  border: none;
+  color: var(--footer-text-notClicked) ;
+  background-color: transparent;
+  padding-bottom: 1em;
+  margin-right: 1em;
+}
+#inspo button:hover, #inspo .btnClicked {
+  border-bottom: 2px solid black;
+  color: black;
+}
+#inspo #contentToShow>div {
+  padding: 0.7em;
+}
+#inspo #contentToShow div:hover h4{
+  font-weight: 400 !important;
+  cursor: pointer;
+}
+.fs7 {
+  font-size: 0.9rem;
+}
+
 footer li{
   padding:0.5em 0;
 }
@@ -338,7 +371,7 @@ footer h6 {
   font-weight: 600;
   padding: 0.6em 0;
 }
-#footerShared>div {
+#footerShared>div:not(:last-child) {
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
@@ -357,6 +390,7 @@ footer h6 {
 
 /* ************** MEDIAQUERIES ********************** */
 @media screen and (max-width: 768px) {
+  
   .dropdown-menu{
     width: 100% !important;
   }
@@ -393,6 +427,7 @@ footer h6 {
     padding: 0 !important;
   }
   #footerMobile {
+    margin-top: 1em;
     padding:1em ;
     border-top: 1px solid grey;
     background-color: white;
