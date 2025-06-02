@@ -2,6 +2,14 @@ console.log("reservation2.js loaded");
 
 const MAX_GUESTS = 5;
 
+// DA TESTARE!!!
+//caricamento logo in base al tag title della pagina
+window.addEventListener('DOMContentLoaded', function() {
+  let logo = document.querySelector(".logo");
+  if(document.title === 'Airbnb MOCK')
+    logo.setAttribute('src', '/assets/logo.png'); 
+});
+
 window.addEventListener("load", setBtnState); //così perché se no i bottoni non sono ancora caricati
 
 //set btn
@@ -147,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
         checkIn = selectedDates[0];
         checkInInput.value = formatDate(checkIn);
         checkOut.set("minDate", checkIn);
-      }
+      },
     });
 
     checkOut = flatpickr("#resCheckOut", {
@@ -159,32 +167,32 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   } else {
-      const checkInPicker = flatpickr("#checkInCalendar", {
-        inline: true,
-        minDate: "today",
-        dateFormat: "d-m-Y",
-        onChange: function (selectedDates) {
-          checkInDate = selectedDates[0];
-          checkInInput.value = formatDate(checkInDate);
-          checkOutPicker.set("minDate", checkInDate);
-          if (checkInDate && checkOutDate) {
-            highlightRange(checkInDate, checkOutDate);
-          }
+    const checkInPicker = flatpickr("#checkInCalendar", {
+      inline: true,
+      minDate: "today",
+      dateFormat: "d-m-Y",
+      onChange: function (selectedDates) {
+        checkInDate = selectedDates[0];
+        checkInInput.value = formatDate(checkInDate);
+        checkOutPicker.set("minDate", checkInDate);
+        if (checkInDate && checkOutDate) {
+          highlightRange(checkInDate, checkOutDate);
         }
-      });
+      }
+    });
 
-      const checkOutPicker = flatpickr("#checkOutCalendar", {
-        inline: true,
-        minDate: "today",
-        dateFormat: "d-m-Y",
-        onChange: function (selectedDates) {
-          checkOutDate = selectedDates[0];
-          checkOutInput.value = formatDate(checkOutDate);
-          if (checkInDate && checkOutDate) {
-            highlightRange(checkInDate, checkOutDate);
-          }
+    const checkOutPicker = flatpickr("#checkOutCalendar", {
+      inline: true,
+      minDate: "today",
+      dateFormat: "d-m-Y",
+      onChange: function (selectedDates) {
+        checkOutDate = selectedDates[0];
+        checkOutInput.value = formatDate(checkOutDate);
+        if (checkInDate && checkOutDate) {
+          highlightRange(checkInDate, checkOutDate);
         }
-      });
+      }
+    });
   }
 
   function highlightRange(fromDate, toDate) {
@@ -248,4 +256,215 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+///////////////////////////////////
+//gestione footer #contentToShow///
+///////////////////////////////////
 
+//array con le varie categorie
+const inspoSubCats = [
+  [ //Popular
+  {city: "Whitby", stay: "House"},
+  {city: "Majorca" , stay: "Cottage"},
+  {city: "Bath" , stay: "Serviced apartment"},
+  {city: "Rome" , stay: "Holiday"},
+  {city: "Cape Town" , stay: "Holiday"},
+  {city: "Harrogate" , stay: "Cottage"},
+  {city: "Athens" , stay: "Flat"},
+  {city: "Donostia-San Sebastian" , stay: "Holiday"},
+  {city: "Portrush" , stay: "Cottage"},
+  {city: "Leicester" , stay: "Cabin"},
+  {city: "Sydney" , stay: "Flat"},
+  {city: "Lincoln" , stay: "House"},
+  {city: "Bristol" , stay: "Cottage"},
+  {city: "Seville" , stay: "Falt"},
+  {city: "Tenby" , stay: "Cabin"},
+  {city: "Poole" , stay: "Flat"},
+  {city: "Windermere" , stay: "Cabin"},
+  ],
+  [ //Costals
+  {city: "Sines", stay: "Monthly"},
+  {city: "Chesil Beach" , stay: "Monthly"},
+  {city: "Weymouth Beach" , stay: "Holiday"},
+  {city: "El Postiguet Beach" , stay: "Monthly"},
+  {city: "Sarasota" , stay: "House"},
+  {city: "Victoria" , stay: "Cottage"},
+  {city: "Paignton" , stay: "Cottage"},
+  {city: "Viña del Mar" , stay: "Holiday"},
+  {city: "Faro" , stay: "Villa"},
+  {city: "Fistral Beach" , stay: "Cottage"},
+  {city: "Santa Barbara" , stay: "House"},
+  {city: "Worthing Beach" , stay: "Flat"},
+  {city: "Portsmouth" , stay: "Holiday"},
+  {city: "Playa de Amadores" , stay: "Holiday"},
+  {city: "Patong Beach" , stay: "House"},
+  {city: "Savannah" , stay: "Cottage"},
+  {city: "Alcúdia" , stay: "Villa"},
+  ],
+  [ //Historic
+  {city: "Caldicot", stay: "Holiday"},
+  {city: "Zadelgem" , stay: "House"},
+  {city: "Cowny Castle" , stay: "Holiday"},
+  {city: "Glasgow Green" , stay: "Pet-friendly"},
+  {city: "Campo de' Fiori" , stay: "Holiday"},
+  {city: "Alnwick Castle" , stay: "Holiday"},
+  {city: "Nyhavn" , stay: "Monthly"},
+  {city: "Pirou" , stay: "Monthly"},
+  {city: "Leuven" , stay: "Holiday"},
+  {city: "Nizwa" , stay: "Monthly"},
+  {city: "Endimburgh Castle" , stay: "Holiday"},
+  {city: "Sudeley Castle" , stay: "Holiday"},
+  {city: "Harvard University" , stay: "Holiday"},
+  {city: "Noli" , stay: "Pet-friendly"},
+  {city: "Blenheim Palace" , stay: "House"},
+  {city: "Fredricksburg" , stay: "House"},
+  {city: "Neuschwanstein Castle" , stay: "Holiday"},
+  ],
+  [ //Islands
+  {city: "Biała Podlaska", stay: "Monthly"},
+  {city: "Cérans-Foulletorte" , stay: "House"},
+  {city: "Ibiúna" , stay: "Monthly"},
+  {city: "Çorlu" , stay: "Monthly"},
+  {city: "Gili Islands" , stay: "Holiday"},
+  {city: "Chios" , stay: "Monthly"},
+  {city: "Ilha de Gigóia" , stay: "House"},
+  {city: "Benidorm Island" , stay: "Holiday"},
+  {city: "Cuautla" , stay: "House"},
+  {city: "Oued Laou" , stay: "Holiday"},
+  {city: "Realp" , stay: "Monthly"},
+  {city: "Pato Branco" , stay: "Monthly"},
+  {city: "La Punt-Chamues-ch" , stay: "Holiday"},
+  {city: "Sincelejo" , stay: "Holiday"},
+  {city: "Mellingen" , stay: "Holiday"},
+  {city: "Clare Island" , stay: "Holiday"},
+  {city: "Târgu Secuiesc" , stay: "Monthly"},
+  ],
+  [ //Lakes
+  {city: "Pasadena", stay: "Cottage"},
+  {city: "Liepāja" , stay: "Pet-friendly"},
+  {city: "Spiez" , stay: "Pet-friendly"},
+  {city: "San Salvador" , stay: "Holiday"},
+  {city: "Buffalo" , stay: "Villa"},
+  {city: "Ithaca" , stay: "Villa"},
+  {city: "Haecham" , stay: "Pet-friendly"},
+  {city: "Daly City" , stay: "House"},
+  {city: "Tintagel" , stay: "Flat"},
+  {city: "Forest Row" , stay: "House"},
+  {city: "Milwaukee" , stay: "Flat"},
+  {city: "Füssen" , stay: "Pet-friendly"},
+  {city: "Lake Havasu" , stay: "Holiday"},
+  {city: "Austin" , stay: "Villa"},
+  {city: "Woodstock" , stay: "Cottage"},
+  {city: "Palm Beach Gardens" , stay: "Villa"},
+  {city: "Montreux" , stay: "Holiday"},
+  ],
+  [ //toDo
+  {city: "Appennine Mountains", stay: "Tours"},
+  {city: "Great Britain" , stay: "Art and culture"},
+  {city: "Oued Tensift" , stay: "Sightseeing"},
+  {city: "Medina" , stay: "Things to do"},
+  {city: "Rome" , stay: "Things to do"},
+  {city: "Francavilla al mare" , stay: "Things to do"},
+  {city: "Porto" , stay: "Sport activities"},
+  {city: "Seine" , stay: "Nature and outdoors"},
+  {city: "Barcelonés" , stay: "Art and culture"},
+  {city: "Barcelona" , stay: "Entertainment"},
+  {city: "Paris" , stay: "Tours"},
+  {city: "Arcozelo" , stay: "Sightseeing"},
+  {city: "Honshu" , stay: "Nature and outdoors"},
+  {city: "Florence" , stay: "Sports activities"},
+  {city: "Cyclades" , stay: "Tours"},
+  {city: "Hebrides" , stay: "Things to do"},
+  {city: "Santa Maria Mayor" , stay: "Tours"},
+  ],
+  [ //unique
+  {city: "Yurt Rentals", stay: "United States"},
+  {city: "Yurt Rentals" , stay: "United Kingdom"},
+  {city: "Castle Rentals" , stay: "United States"},
+  {city: "Houseboats" , stay: "United States"},
+  {city: "Holiday Caravans" , stay: "United Kingdom"},
+  {city: "Private Island Rentals" , stay: "United States"},
+  {city: "Farm Houses" , stay: "United States"},
+  {city: "Farm Cottages" , stay: "United Kingdom"},
+  {city: "Cabin Rentals" , stay: "Australia"},
+  {city: "Luxury Cabins" , stay: "United Kingdom"},
+  {city: "Luxury Cabins" , stay: "United States"},
+  {city: "Holiday Chalets" , stay: "United Kingdom"},
+  {city: "Cottage Rentals" , stay: "United States"},
+  {city: "Holiday Cottages" , stay: "United Kingdom"},
+  {city: "Mansion Rentals" , stay: "United States"},
+  {city: "Villa Rentals" , stay: "United Kingdom"},
+  {city: "Holiday Bungalows" , stay: "United Kingdom"},
+  ],
+  [ //unique
+  {city: "Amazing Pools", stay: ""},
+  {city: "Arctic", stay: ""},
+  {city: "Camping", stay: ""},
+  {city: "Camper Vans", stay: ""},
+  {city: "Castles", stay: ""},
+  {city: "Containers", stay: ""},
+  {city: "Countryside", stay: ""},
+  {city: "Design", stay: ""},
+  {city: "Earth Homes", stay: ""},
+  {city: "Farms", stay: ""},
+  {city: "National Parks", stay: ""},
+  {city: "Vineyards", stay: ""},
+  {city: "OMG!", stay: ""},
+  {city: "Tiny Homes", stay: ""},
+  {city: "Towers", stay: ""},
+  {city: "Windmills", stay: ""},
+  {city: "Luxe", stay: ""},
+  ],
+];
+
+//prima inizializzazione della tendina #popular
+document.addEventListener('DOMContentLoaded', fillContent(document.getElementById('contentToShow'), 0));
+
+document.getElementById('footerNav').addEventListener('click', function (event) {
+  let btns = document.querySelectorAll('#inspo button');
+  let container = document.getElementById('contentToShow');
+  let index; 
+  //toglo la classe btnClicked all'elemento che l'aveva prima; 
+  //non uso forEach perché mi serve tenere traccia dell'indice
+  for(let i=0; i<btns.length; i++) {
+    if (btns[i].classList.contains('btnClicked'))
+      btns[i].classList.remove('btnClicked');
+    if (btns[i].id === event.target.id)
+      index = i;
+  }
+  console.log(index);
+  //metto la classe btnClicked al btn clicked
+  if (event.target.tagName === 'BUTTON')
+    event.target.classList.add('btnClicked');
+  //se ci sono elementi, li toglie
+  if (container.hasChildNodes())
+    clearContent(container);
+  //aggiungo la tendina dell'elemento corrispondente dall'array inspoSubCats
+  fillContent(container, index);
+  //pulisce il container  
+  function clearContent() {
+    while (container.hasChildNodes()) 
+      container.removeChild(container.firstChild);
+  } 
+});
+
+//fuori dal blocco per caricare la prima tendina
+function fillContent(container, index) {
+  let html = ''; //stringa che metterò come innerHTML a container
+  for (let i=0; i<inspoSubCats[index].length; i++) {
+    html += `<div class="col-sm-6 col-lg-2"> <a href="#"> <h3 class="fs-6"> ${inspoSubCats[index][i].city} </h3>`;
+    //#categories avrà solo .city -> categoria di viaggio
+    if (index === inspoSubCats[index].length) {
+      html += ' </div>'; //aggiungo la chiusura del tag
+      continue; //passo alla prossima iterazione
+    }
+
+    html += `<h4 class="fs7 fw-light"> ${inspoSubCats[index][i].stay}`;
+    //poi sono categorie senza rentals
+    if ((index >= 0 && index <= 4))
+      html += ' rentals'
+    //in ogni caso aggiungi la chiusura dei tag
+    html += ' </h4> </a> </div>';
+  }
+  //aggiungo al container
+  container.innerHTML = html; 
+}
