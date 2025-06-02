@@ -13,9 +13,11 @@
 
   <!-- CSS Personalizzato -->
   <link rel="stylesheet" href="/css/myReset.css">
-  <link rel="stylesheet" href="/css/updatedLayout.css">
-  <link rel="stylesheet" href="/css/airBnbPgn2.css">
   <link rel="stylesheet" href="/css/mediaQuery.css">
+    <link rel="stylesheet" href="/css/updatedLayout.css">
+  <link rel="stylesheet" href="/css/airBnbPgn2.css">
+
+     
 </head>
 
 <body>
@@ -632,14 +634,31 @@
         <li><a href="#"><i class="bi bi-person-circle"></i> Log-in </a></li>
       </ul>
     </section>
+    <section id="inspo">
+      <h2 class="fs-4 mb-3">Inspirations for future getaways</h2>
+      <nav id="footerNav">
+        <button id="popular" class="btnClicked">Popular</button>
+        <button id="costals">Costals</button>
+        <button id="historic">Historic</button>
+        <button id="islands">Islands</button>
+        <button id="lakes">Lakes</button>
+        <button id="toDo">Things to do</button>
+        <button id="unique">Unique stays</button>
+        <button id="categories">Categories</button>
+      </nav>
+      <div id="contentToShow" class="row mb-5">
+
+      </div>
+    </section>
 
   </main>
 
   <!-- SEZIONE FOOTER -->
   <footer>
 
+
     <section id="footerShared" class="row">
-      <div id="assistenza" class="col-sm-12 col-lg-4">
+      <div class="col-sm-12 col-lg-4">
         <h6>Support</h6>
         <ul>
           <li><a href="#">Help Center</a></li>
@@ -650,7 +669,8 @@
           <li><a href="#">Report neighbourhood concern</a></li>
         </ul>
       </div>
-      <div id="ospitare" class="col-sm-12 col-lg-4">
+
+      <div class="col-sm-12 col-lg-4">
         <h6>Hosting</h6>
         <ul>
           <li><a href="#">Airbnb your home</a></li>
@@ -661,7 +681,8 @@
           <li><a href="#">Find a co-host</a></li>
         </ul>
       </div>
-      <div id="ospitare-2" class="col-sm-12 col-lg-4">
+
+      <div class="col-sm-12 col-lg-4">
         <h6>Airbnb</h6>
         <ul>
           <li><a href="#">2025 Summer Release</a></li>
@@ -674,11 +695,11 @@
         </ul>
       </div>
     </section>
-    <section id="copyright" class="row">
+
+    <div id="copyright" class="row">
 
       <div class="copyright-left d-sm-none d-lg-block col-lg-8">
         <p>© 2025 Airbnb, Inc. &sdot; Privacy &sdot; Terms &sdot; Sitemap &sdot; Company details</p>
-
       </div>
 
       <div class="copyright-right d-sm-flex col-sm-11 col-lg-4 justify-content-around row">
@@ -694,9 +715,12 @@
           <i class="bi bi-instagram"></i>
         </div>
       </div>
-    </section>
+
+    </div>
+
+
   </footer>
-  <!-- ************ da includere **************** -->
+
   <!-- flatpikr -->
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <!-- bs -->

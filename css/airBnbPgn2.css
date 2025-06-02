@@ -109,7 +109,7 @@ body {
 .card-body p {
     font-size: 0.75em;
     /* base per schermi piccoli */
-    text-align: center;
+    text-align: left;
 }
 
 .card-desc {

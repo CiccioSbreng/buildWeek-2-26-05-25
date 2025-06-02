@@ -131,7 +131,7 @@
 
     .card-body p {
         font-size: 0.8em;
-        text-align: left;
+        text-align: left !important;
     }
 
     /* Decommenta se vuoi i bottoni in colonna anche su LG */
