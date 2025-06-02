@@ -20,7 +20,20 @@
 </head>
 
 <body>
- 
+ <!-- 
+  **********___IMPORTANTE: STRUTTURA DEI FILE___***********
+  <head>
+    parte circondata da asterischi da includere (se non l'avete già fatto)
+  </head>
+  <main>
+    div#header -> importante, altrimenti non è sticky; primo div del <main>
+    ********** contenuto delle vostre pagine ************
+    div#footerMobile -> importante, altrimenti non è sticky; ultimo div del <main>
+  </main>
+  <footer>
+    incollare tutto il contenuto 
+  </footer
+  -->
 
   <main>
     <div id="header" class="row m-auto px-lg-4 py-lg-3">
@@ -161,9 +174,11 @@
   
     </div>
 
+    <!-- 
+      *********************** QUI IL VOSTRO CONTENUTO *********************
+     -->
 
-
-    <!-- da mettere dentro al main, non al footer; visibile solo su mobile -->
+    <!-- da mettere in fondo al main; visibile solo su mobile -->
     <div id="footerMobile" class="col-sm-12 d-lg-none">
       <ul class="d-flex justify-content-around">
         <li><a href="#"><i class="bi bi-search"></i> Discover</a></li>
