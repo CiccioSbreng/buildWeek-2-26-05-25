@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html lang="it">
-<head> 
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Airbnb MOCK</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/airbnb.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style1.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=account_circle" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=language" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="\css\style1.css">
     <link rel="stylesheet" href="\css\updatedLayout.css">
 </head>
+
 <body class="homepage">
     <header class="row m-auto px-lg-4 py-lg-3 fixed-top">
         <div class="logoContainer col-2 d-block">
@@ -17,6 +30,7 @@
                 <img src="/assets/logo-pink.png" alt="logo" class="logoImg d-block w-50">
             </a>
         </div>
+
 
         <!-- button visibile solo su mobile -->
         <button id="toggleReservationBar" class="col-sm-9 d-lg-none">
@@ -35,6 +49,20 @@
                     <li><a class="dropdown-item" href="#">Monte Carlo</a></li>
                     <li><a class="dropdown-item" href="#">Edinburgh</a></li>
                 </ul>
+
+        <div class="centerHeader d-flex flex-column align-items-center">
+            <nav class="d-flex gap-4 mb-3">
+                <a href="#" class="nav-link">Places to stay</a>
+                <a href="#" class="nav-link">Experiences</a>
+                <a href="#" class="nav-link">Online Experiences</a>
+            </nav>
+            <div class="reservation">
+                <input type="text" placeholder="Where are you going?">
+                <input type="date" placeholder="Check in">
+                <input type="date" placeholder="Check out">
+                <input type="number" placeholder="Add guests" min="1">
+                <button type="submit" class="btn btn-primary">Search</button>
+
             </div>
 
             <div class="resField cin"> <!-- check-in -->
@@ -109,6 +137,7 @@
             <a href="#">Become Host</a>
             <a href="#footer" title="about us"><i class="bi bi-globe"></i></a>
             <div class="dropdown">
+
                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-person-circle"></i>
                 </button>
@@ -121,6 +150,18 @@
                         <a class="dropdown-item" href="#">Gift card</a>
                     </li>
                     <li><a class="dropdown-item" href="#">Accedi o registrati</a></li>
+
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    <img src="/assets/propic.png" alt="Pic" style="height: 40px; width: 40px;">
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+
                 </ul>
             </div>
         </div>
@@ -221,8 +262,6 @@
                         </div>
                     </div>
                 </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -283,9 +322,9 @@
             </div>
         </section>
     </footer>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="/javascript/updatedLayout.js"></script>
 </body>
+
 </html>

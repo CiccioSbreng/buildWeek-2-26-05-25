@@ -20,162 +20,197 @@
 </head>
 
 <body>
-  <header class="row m-auto px-lg-4 py-lg-3">
-    <div class="logoContainer col-2 d-block">
-      <a href="airBnb.html" class="logo">
-        <img src="/assets/logo-pink.png" alt="logo" class="logoImg d-block w-50">
-      </a>
-    </div>
-
-    <!-- button visibile solo su mobile -->
-    <button id="toggleReservationBar" class="col-sm-9 d-lg-none ">
-      <span> <i class="bi bi-search"></i> Discover</span>
-    </button>
-
-    <div id="reservationBar" class="reservationBar col-lg-7 d-none d-lg-flex">
-
-      <div class="resField dropdown" data-bs-toggle="dropdown"> <!-- location -->
-        <label for="resSearch">Location</label>
-        <input type="search" id="resSearch" placeholder="Where to?">
-        <ul class="dropdown-menu animateDropdown location"> <!--location dropdown-->
-          <h3 class="dropdpwnTitle">Top 5</h3>
-          <li><a class="dropdown-item" href="airBnbPgn2.html">Genova</a></li>
-          <li><a class="dropdown-item" href="#">Location2</a></li>
-          <li><a class="dropdown-item" href="#">Location3</a></li>
-          <li><a class="dropdown-item" href="#">Location4</a></li>
-          <li><a class="dropdown-item" href="#">Location5</a></li>
-        </ul>
-      </div>
-
-      <div class="resField cin"> <!-- check-in -->
-        <label for="resCheckIn">Check-in</label>
-        <input type="text" id="resCheckIn" placeholder="Check-in" readonly>
-      </div>
-
-      <div class="resField cout"> <!-- check-out -->
-        <label for="resCheckOut">Check-out</label>
-        <input type="text" id="resCheckOut" placeholder="Check-out" readonly>
-      </div>
-
-      <div class="myDropdown" id="dateDropdown">
-
-        <div class="calendarGrid">
-          <div id="checkInCalendar">
-            <!-- calendario check-in desktop-->
-          </div>
-          <div id="checkOutCalendar">
-            <!-- calendario check-out desktop-->
-          </div>
-        </div>
-
-      </div>
-
-      <div class="resField" id="dropdownWrapper">
-        <label for="guestInput">Who</label>
-        <input type="text" id="guestInput" placeholder="1 Adult" readonly />
-
-        <div class="myDropdown" id="guestDropdown"> <!-- dropdown guests OK -->
-
-          <div class="guestRow">
-            <span>Adults</span>
-            <div class="counter">
-              <button class="decrease counterBtn"><i class="bi bi-dash-circle"></i></button>
-              <span class="qty">1</span>
-              <button class="increase counterBtn"><i class="bi bi-plus-circle"></i></button>
-            </div>
-          </div>
-
-          <div class="guestRow">
-            <span>Children</span>
-            <div class="counter">
-              <button class="decrease counterBtn"><i class="bi bi-dash-circle"></i></button>
-              <span class="qty">0</span>
-              <button class="increase counterBtn"><i class="bi bi-plus-circle"></i></button>
-            </div>
-          </div>
-
-          <div class="guestRow">
-            <span>Infants</span>
-            <div class="counter">
-              <button class="decrease counterBtn"><i class="bi bi-dash-circle"></i></button>
-              <span class="qty">0</span>
-              <button class="increase counterBtn"><i class="bi bi-plus-circle"></i></button>
-            </div>
-          </div>
-
-          <div class="guestRow">
-            <span>Pets</span>
-            <div class="counter">
-              <button class="decrease counterBtn"><i class="bi bi-dash-circle"></i></button>
-              <span class="qty">0</span>
-              <button class="increase counterBtn"><i class="bi bi-plus-circle"></i></button>
-            </div>
-          </div>
-
-        </div> <!-- fine dropdown guests -->
-      </div>
-
-      <button type="button" class="searchBtn"><i class="bi bi-search"></i></button>
-
-    </div> <!-- fine reservationBar -->
-
-    <!-- side menu OK -->
-    <div class="sideMenu d-none d-lg-flex col-lg-2 align-items-center">
-
-      <a href="#">Become Host</a>
-
-      <a href="#footer" title="about us"><i class="bi bi-globe"></i></a>
-
-
-      <div class="dropdown">
-        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="bi bi-person-circle"></i>
-        </button>
-        <ul class="dropdown-menu">
-          <li>
-            <a class="dropdown-item" href="#">
-              <i class="bi bi-question-circle"></i> Centro Assistenza
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">
-              <i class="bi bi-house-heart-fill"></i> Inizia a ospitare
-            </a>
-          </li>
-          <li>
-            <div>
-              <a class="dropdown-item" href="#">Invita un host</a>
-              <a class="dropdown-item" href="#">Trova un co-host</a>
-              <a class="dropdown-item" href="#">Gift card</a>
-            </div>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Accedi o registrati</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-  </header>
+ <!-- 
+  **********___IMPORTANTE: STRUTTURA DEI FILE___***********
+  <head>
+    parte circondata da asterischi da includere (se non l'avete già fatto)
+  </head>
+  <main>
+    div#header -> importante, altrimenti non è sticky; primo div del <main>
+    ********** contenuto delle vostre pagine ************
+    div#footerMobile -> importante, altrimenti non è sticky; ultimo div del <main>
+  </main>
+  <footer>
+    incollare tutto il contenuto 
+  </footer
+  -->
 
   <main>
-    
-    <!-- da mettere dentro al main, non al footer; visibile solo su mobile -->
-    <section id="footerMobile" class="col-sm-12 d-lg-none">
+    <div id="header" class="row m-auto px-lg-4 py-lg-3">
+      <div class="logoContainer col-sm-2 col-lg-1 d-block">
+        <a href="airBnb.html" class="logo">
+          <img src="/assets/logo-pink.png" alt="logo" class="logoImg d-block w-100">
+        </a>
+      </div>
+  
+      <!-- button visibile solo su mobile -->
+      <button id="toggleReservationBar" class="col-sm-9 d-lg-none ">
+        <span> <i class="bi bi-search"></i> Discover</span>
+      </button>
+  
+      <div id="reservationBar" class="reservationBar col-lg-8 d-none d-lg-flex">
+  
+        <div class="resField dropdown" data-bs-toggle="dropdown"> <!-- location -->
+          <label for="resSearch">Location</label>
+          <input type="search" id="resSearch" placeholder="Where to?">
+          <ul class="dropdown-menu animateDropdown location"> <!--location dropdown-->
+            <li><h3>Top 5</h3></li>
+            <li><a class="dropdown-item" href="airBnbPgn2.html">Genova</a></li>
+            <li><a class="dropdown-item" href="#">Location2</a></li>
+            <li><a class="dropdown-item" href="#">Location3</a></li>
+            <li><a class="dropdown-item" href="#">Location4</a></li>
+            <li><a class="dropdown-item" href="#">Location5</a></li>
+          </ul>
+        </div>
+  
+        <div class="resField cin"> <!-- check-in -->
+          <label for="resCheckIn">Check-in</label>
+          <input type="text" id="resCheckIn" placeholder="Check-in" readonly>
+        </div>
+  
+        <div class="resField cout"> <!-- check-out -->
+          <label for="resCheckOut">Check-out</label>
+          <input type="text" id="resCheckOut" placeholder="Check-out" readonly>
+        </div>
+  
+        <div class="myDropdown" id="dateDropdown">
+  
+          <div class="calendarGrid">
+            <div id="checkInCalendar">
+              <!-- calendario check-in desktop-->
+            </div>
+            <div id="checkOutCalendar">
+              <!-- calendario check-out desktop-->
+            </div>
+          </div>
+  
+        </div>
+  
+        <div class="resField" id="dropdownWrapper">
+          <label for="guestInput">Who</label>
+          <input type="text" id="guestInput" placeholder="1 Adult" readonly >
+  
+          <div class="myDropdown" id="guestDropdown"> <!-- dropdown guests OK -->
+  
+            <div class="guestRow">
+              <span>Adults</span>
+              <div class="counter">
+                <button class="decrease counterBtn"><i class="bi bi-dash-circle"></i></button>
+                <span class="qty">1</span>
+                <button class="increase counterBtn"><i class="bi bi-plus-circle"></i></button>
+              </div>
+            </div>
+  
+            <div class="guestRow">
+              <span>Children</span>
+              <div class="counter">
+                <button class="decrease counterBtn"><i class="bi bi-dash-circle"></i></button>
+                <span class="qty">0</span>
+                <button class="increase counterBtn"><i class="bi bi-plus-circle"></i></button>
+              </div>
+            </div>
+  
+            <div class="guestRow">
+              <span>Infants</span>
+              <div class="counter">
+                <button class="decrease counterBtn"><i class="bi bi-dash-circle"></i></button>
+                <span class="qty">0</span>
+                <button class="increase counterBtn"><i class="bi bi-plus-circle"></i></button>
+              </div>
+            </div>
+  
+            <div class="guestRow">
+              <span>Pets</span>
+              <div class="counter">
+                <button class="decrease counterBtn"><i class="bi bi-dash-circle"></i></button>
+                <span class="qty">0</span>
+                <button class="increase counterBtn"><i class="bi bi-plus-circle"></i></button>
+              </div>
+            </div>
+  
+          </div> <!-- fine dropdown guests -->
+        </div>
+  
+        <button type="button" class="searchBtn"><i class="bi bi-search"></i></button>
+  
+      </div> <!-- fine reservationBar -->
+  
+      <!-- side menu OK -->
+      <div class="sideMenu d-none d-lg-flex col-lg-2 align-items-center">
+  
+        <a href="#">Become Host</a>
+  
+        <a href="#footer" title="about us"><i class="bi bi-globe"></i></a>
+  
+  
+        <div class="dropdown">
+          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="bi bi-question-circle"></i> Centro Assistenza
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="bi bi-house-heart-fill"></i> Inizia a ospitare
+              </a>
+            </li>
+            <li>
+              <div>
+                <a class="dropdown-item" href="#">Invita un host</a>
+                <a class="dropdown-item" href="#">Trova un co-host</a>
+                <a class="dropdown-item" href="#">Gift card</a>
+              </div>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Accedi o registrati</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+    </div>
+
+    <!-- 
+      *********************** QUI IL VOSTRO CONTENUTO *********************
+     -->
+
+    <!-- da mettere in fondo al main; visibile solo su mobile -->
+    <div id="footerMobile" class="col-sm-12 d-lg-none">
       <ul class="d-flex justify-content-around">
         <li><a href="#"><i class="bi bi-search"></i> Discover</a></li>
         <li><a href="#"><i class="bi bi-heart"></i> Favourites</a></li>
         <li><a href="#"><i class="bi bi-person-circle"></i> Log-in </a></li>
       </ul>
-    </section>
+    </div>
 
 
   </main>
 
   <footer>
 
+    <section id="inspo">
+      <h2 class="fs-4 mb-3">Inspirations for future getaways</h2>
+      <nav id="footerNav">
+        <button id="popular" class="btnClicked">Popular</button>
+        <button id="costals">Costals</button>
+        <button id="historic">Historic</button>
+        <button id="islands">Islands</button>
+        <button id="lakes">Lakes</button>
+        <button id="toDo">Things to do</button>
+        <button id="unique">Unique stays</button>
+        <button id="categories">Categories</button>
+      </nav>
+      <div id="contentToShow" class="row mb-5">
+      
+      </div>
+    </section>
+
     <section id="footerShared" class="row">
-      <div id="assistenza" class="col-sm-12 col-lg-4">
+      <div  class="col-sm-12 col-lg-4">
         <h6>Support</h6>
         <ul>
           <li><a href="#">Help Center</a></li>
@@ -186,7 +221,8 @@
           <li><a href="#">Report neighbourhood concern</a></li>
         </ul>
       </div>
-      <div id="ospitare" class="col-sm-12 col-lg-4">
+
+      <div class="col-sm-12 col-lg-4">
         <h6>Hosting</h6>
         <ul>
           <li><a href="#">Airbnb your home</a></li>
@@ -197,7 +233,8 @@
           <li><a href="#">Find a co-host</a></li>
         </ul>
       </div>
-      <div id="ospitare" class="col-sm-12 col-lg-4">
+
+      <div class="col-sm-12 col-lg-4">
         <h6>Airbnb</h6>
         <ul>
           <li><a href="#">2025 Summer Release</a></li>
@@ -210,11 +247,11 @@
         </ul>
       </div>
     </section>
-    <section id="copyright" class="row">
+
+    <div id="copyright" class="row">
 
       <div class="copyright-left d-sm-none d-lg-block col-lg-8">
         <p>© 2025 Airbnb, Inc. &sdot; Privacy &sdot; Terms &sdot; Sitemap &sdot; Company details</p>
-        </p>
       </div>
 
       <div class="copyright-right d-sm-flex col-sm-11 col-lg-4 justify-content-around row">
@@ -231,7 +268,7 @@
         </div>
       </div>
 
-    </section>
+    </div>
 
 
   </footer>

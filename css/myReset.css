@@ -2,12 +2,48 @@
   RESET CSS AVANZATO - RESET + NORMALIZE + MIGLIORAMENTI
 ==========================================*/
 
+/* Variabili CSS per maggiore flessibilità e manutenibilità */
+:root {
+  --font-family-base: system-ui, -apple-system, sans-serif;
+  --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  --line-height-base: 1.5;
+  --font-size-base: 1rem;
+  --focus-color: #005fcc;
+  --primary-color: #005fcc;
+  --bg-color: #fff;
+  --text-color: #333;
+  --placeholder-color: #666;
+  --border-radius: 4px;
+  --scrollbar-thumb: #ccc;
+  --scrollbar-track: #f1f1f1;
+}
+
+/* Supporto per dark mode e preferenze utente */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --primary-color: #4a9eff;
+    --focus-color: #4a9eff;
+    --placeholder-color: #999;
+    --scrollbar-thumb: #555;
+    --scrollbar-track: #2a2a2a;
+  }
+}
+
 /* Impostazioni base */
 html {
   box-sizing: border-box;
   font-size: 16px; /* Base flessibile per eventuali media query */
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
+}
+
+/* Smooth scrolling rispettando le preferenze di movimento */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 *, *::before, *::after {
@@ -18,10 +54,10 @@ html {
 
 /* Base tipografica e resa grafica */
 body {
-  font-family: system-ui, sans-serif;
-  line-height: 1.5;
-  background-color: #fff;
-  color: #333;
+  font-family: var(--font-family-base);
+  line-height: var(--line-height-base);
+  background-color: var(--bg-color);
+  color: var(--text-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -41,7 +77,6 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ul, ol, li {
 /* Liste: rimozione degli stili predefiniti */
 ul, ol {
   list-style: none;
-  
 }
 
 /* Tabelle: eliminazione di spaziature indesiderate */
@@ -55,6 +90,15 @@ img, svg, video, canvas, audio, iframe, embed, object {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+/* Miglioramento per immagini lazy-loaded e responsive */
+img {
+  content-visibility: auto;
+}
+
+img[loading="lazy"] {
+  content-visibility: auto;
 }
 
 /* Gestione delle citazioni per blockquote e q */
@@ -86,9 +130,30 @@ button {
   cursor: pointer;
 }
 
+/* Placeholder più accessibile */
+::placeholder {
+  color: var(--placeholder-color);
+  opacity: 1;
+}
+
+/* Rimozione dello stile di autocomplete per WebKit */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px var(--bg-color) inset;
+  -webkit-text-fill-color: var(--text-color);
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Stati disabilitati più chiari */
+:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 /* Elementi tipografici speciali per blocchi di codice */
 code, kbd, samp {
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: var(--font-family-mono);
   font-size: 1em;
 }
 
@@ -117,16 +182,143 @@ address {
 
 /* Stile per la selezione del testo */
 ::selection {
-  background-color: var(--primary-color, #005fcc);
+  background-color: var(--primary-color);
   color: #fff;
 }
 
-/* Gestione del focus per una migliore accessibilità */
+/* Gestione del focus migliorata per una migliore accessibilità */
 :focus {
-  outline: 2px solid var(--focus-color, #005fcc);
+  outline: 2px solid var(--focus-color);
   outline-offset: 2px;
 }
+
 /* Supporto per focus visibile in browser moderni */
 :focus:not(:focus-visible) {
   outline: none;
+}
+
+/* Focus più specifico per elementi interattivi */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
+  border-radius: var(--border-radius);
+}
+
+/* Skip links per migliorare l'accessibilità con screen reader */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--focus-color);
+  color: white;
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 10000;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Gestione dello scrolling personalizzata */
+.scroll-container {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Scrollbar personalizzate per WebKit */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--scrollbar-thumb) 80%, black);
+}
+
+/* Rispetto delle preferenze utente per movimento ridotto */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .skip-link {
+    transition: none;
+  }
+}
+
+/* Supporto per contrast alto quando richiesto */
+@media (prefers-contrast: high) {
+  :root {
+    --focus-color: #000;
+    --primary-color: #000;
+  }
+  
+  :focus-visible {
+    outline-width: 3px;
+  }
+}
+
+/* Miglioramenti per la stampa */
+@media print {
+  *, *::before, *::after {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  a, a:visited {
+    text-decoration: underline;
+  }
+  
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+  
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  
+  thead {
+    display: table-header-group;
+  }
+  
+  tr, img {
+    page-break-inside: avoid;
+  }
+  
+  img {
+    max-width: 100% !important;
+  }
+  
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  
+  h2, h3 {
+    page-break-after: avoid;
+  }
 }
