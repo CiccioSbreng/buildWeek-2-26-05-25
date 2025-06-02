@@ -85,6 +85,10 @@
     .custom-container {
         padding: 0 20px;
     }
+      .header-stays span {
+        font-size: 0.9em;
+    }
+
 
     .col-lg-5ths,
     .col-md-4 {
@@ -93,7 +97,7 @@
     }
 
     .card-body p {
-        font-size: 0.85em;
+        font-size: 0.8em;
         text-align: left;
     }
 
@@ -115,6 +119,10 @@
     .container {
         max-width: 95%;
     }
+      .header-stays span {
+        font-size: 0.9em;
+    }
+
 
     .col-lg-5ths {
         flex: 0 0 33.33%;
@@ -122,7 +130,7 @@
     }
 
     .card-body p {
-        font-size: 0.9em;
+        font-size: 0.8em;
         text-align: left;
     }
 
@@ -157,10 +165,16 @@
     }
 
     .card-body p {
-        font-size: 1em;
+        font-size: 0.8em;
         text-align: left;
     }
+      .header-stays span {
+        font-size: 0.9em;
+       
+    }
+
 }
+
 
 /* --- XXL: 1400px e oltre --- */
 @media (min-width: 1400px) {
@@ -174,9 +188,13 @@
     }
 
     .card-body p {
-        font-size: 1em;
+        font-size: 0.8em;
         text-align: left;
     }
+    .header-stays span {
+        font-size: 0.9em;
+    }
+
 
     /* Decommenta se vuoi i bottoni in colonna anche su XXL */
     /*

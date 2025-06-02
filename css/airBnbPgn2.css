@@ -49,8 +49,6 @@ body {
 
 .card-cont {
     width: 100%;
-  
-
 
 }
 
@@ -96,6 +94,7 @@ body {
 .btn:hover {
     transform: translateY(-1px);
 }
+
 
 /* Contenuto interno delle card */
 .card-body {
