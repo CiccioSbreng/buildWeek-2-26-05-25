@@ -4,57 +4,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Airbnb MOCK</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style1.css">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=account_circle" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=language" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/airbnb.css">
     <link rel="stylesheet" href="\css\style1.css">
-
+    <link rel="stylesheet" href="\css\updatedLayout.css">
 </head>
 <body class="homepage">
-    <header class="fixed-top d-flex justify-content-between align-items-center p-3">
-        <div class="leftHeader">
-            <img src="/assets/logo-pink.png" alt="Airbnb Logo" style="height:40px;">
+    <header class="row m-auto px-lg-4 py-lg-3 fixed-top">
+        <div class="logoContainer col-2 d-block">
+            <a href="airBnb.html" class="logo">
+                <img src="/assets/logo-pink.png" alt="logo" class="logoImg d-block w-50">
+            </a>
         </div>
-        <div class="centerHeader d-flex flex-column align-items-center"> 
-            <nav class="d-flex gap-4 mb-3">
-                <a href="#" class="nav-link">Places to stay</a>
-                <a href="#" class="nav-link">Experiences</a>
-                <a href="#" class="nav-link">Online Experiences</a>
-            </nav>
-            <div class="reservation">
-                <input type="text" placeholder="Where are you going?">
-                <input type="date" placeholder="Check in">
-                <input type="date" placeholder="Check out">
-                <input type="number" placeholder="Add guests" min="1">
-                <button type="submit" class="btn btn-primary">Search</button>
+
+        <!-- button visibile solo su mobile -->
+        <button id="toggleReservationBar" class="col-sm-9 d-lg-none">
+            <span><i class="bi bi-search"></i> Discover</span>
+        </button>
+
+        <div id="reservationBar" class="reservationBar col-lg-7 d-none d-lg-flex">
+            <div class="resField dropdown" data-bs-toggle="dropdown"> <!-- location -->
+                <label for="resSearch">Location</label>
+                <input type="search" id="resSearch" placeholder="Where to?">
+                <ul class="dropdown-menu animateDropdown location"> <!--location dropdown-->
+                    <h3 class="dropdpwnTitle">Top 5</h3>
+                    <li><a class="dropdown-item" href="airBnbPgn2.html">Genova</a></li>
+                    <li><a class="dropdown-item" href="#">Milan</a></li>
+                    <li><a class="dropdown-item" href="#">Inverness</a></li>
+                    <li><a class="dropdown-item" href="#">Monte Carlo</a></li>
+                    <li><a class="dropdown-item" href="#">Edinburgh</a></li>
+                </ul>
             </div>
-        </div>
-        <div class="rightHeader d-flex gap-3 align-items-center">
-            <a href="#" class="host-link">Become a host</a>
-            <span class="material-symbols-outlined">language</span>
+
+            <div class="resField cin"> <!-- check-in -->
+                <label for="resCheckIn">Check-in</label>
+                <input type="text" id="resCheckIn" placeholder="Check-in" readonly>
+            </div>
+
+            <div class="resField cout"> <!-- check-out -->
+                <label for="resCheckOut">Check-out</label>
+                <input type="text" id="resCheckOut" placeholder="Check-out" readonly>
+            </div>
+
+            <div class="myDropdown" id="dateDropdown">
+                <div class="calendarGrid">
+                    <div id="checkInCalendar">
+                        <!-- calendario check-in desktop-->
+                    </div>
+                    <div id="checkOutCalendar">
+                        <!-- calendario check-out desktop-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="resField" id="dropdownWrapper">
+                <label for="guestInput">Who</label>
+                <input type="text" id="guestInput" placeholder="1 Adult" readonly />
+
+                <div class="myDropdown" id="guestDropdown"> <!-- dropdown guests OK -->
+                    <div class="guestRow">
+                        <span>Adults</span>
+                        <div class="counter">
+                            <button class="decrease counterBtn"><i class="bi bi-dash-circle"></i></button>
+                            <span class="qty">1</span>
+                            <button class="increase counterBtn"><i class="bi bi-plus-circle"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="guestRow">
+                        <span>Children</span>
+                        <div class="counter">
+                            <button class="decrease counterBtn"><i class="bi bi-dash-circle"></i></button>
+                            <span class="qty">0</span>
+                            <button class="increase counterBtn"><i class="bi bi-plus-circle"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="guestRow">
+                        <span>Infants</span>
+                        <div class="counter">
+                            <button class="decrease counterBtn"><i class="bi bi-dash-circle"></i></button>
+                            <span class="qty">0</span>
+                            <button class="increase counterBtn"><i class="bi bi-plus-circle"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="guestRow">
+                        <span>Pets</span>
+                        <div class="counter">
+                            <button class="decrease counterBtn"><i class="bi bi-dash-circle"></i></button>
+                            <span class="qty">0</span>
+                            <button class="increase counterBtn"><i class="bi bi-plus-circle"></i></button>
+                        </div>
+                    </div>
+                </div> <!-- fine dropdown guests -->
+            </div>
+
+            <button type="button" class="searchBtn"><i class="bi bi-search"></i></button>
+        </div> <!-- fine reservationBar -->
+
+        <!-- Side menu -->
+        <div class="sideMenu d-none d-lg-flex col-lg-2 align-items-center">
+            <a href="#">Become Host</a>
+            <a href="#footer" title="about us"><i class="bi bi-globe"></i></a>
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                  <img src="/assets/propic.png" alt="Pic" style="height: 40px; width: 40px;">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person-circle"></i>
                 </button>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-question-circle"></i> Centro Assistenza</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-house-heart-fill"></i> Inizia a ospitare</a></li>
+                    <li>
+                        <a class="dropdown-item" href="#">Invita un host</a>
+                        <a class="dropdown-item" href="#">Trova un co-host</a>
+                        <a class="dropdown-item" href="#">Gift card</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Accedi o registrati</a></li>
                 </ul>
             </div>
         </div>
     </header>
 
     <main>
+        <!-- mobile footer  -->
+        <section id="footerMobile" class="col-sm-12 d-lg-none">
+            <ul class="d-flex justify-content-around">
+                <li><a href="#"><i class="bi bi-search"></i> Discover</a></li>
+                <li><a href="#"><i class="bi bi-heart"></i> Favourites</a></li>
+                <li><a href="#"><i class="bi bi-person-circle"></i> Log-in </a></li>
+            </ul>
+        </section>
+
         <section class="hero-section">
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <h1>GO<br>NEAR</h1>
+                <h1 class="hero-title fw-bold">GO<br>NEAR</h1>
                 <button class="cta-button">Explore Nearby Stays</button>
             </div>
         </section>
@@ -62,14 +147,14 @@
 
     <section class="nearby-destinations py-5">
         <div class="container">
-            <h2 class="mb-4 fw-bold">Esplora destinazioni vicino a te</h2>
+            <h2 class="mb-4 fw-bold">Explore Nearby Stays</h2>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
                 <div class="col">
                     <div class="card h-100 destination text-center border-0 shadow-sm">
                         <img src="/assets/genova.png" class="card-img-top rounded" alt="Genova">
                         <div class="card-body">
                             <p class="card-text mb-0 fw-semibold">Genova</p>
-                            <small class="text-muted">15 minuti in auto</small>
+                            <small class="text-muted">15 minutes by car</small>
                         </div>
                     </div>
                 </div>
@@ -142,28 +227,65 @@
         </div>
     </section>
 
-    <footer class="d-flex justify-content-between align-items-center p-4">
-        <p class="mb-0">© 2025 Airbnb, Inc.</p>
-        <nav>
-            <ul class="list-inline mb-0">
-                <li class="list-inline-item"><a href="#">Privacy</a></li>
-                <li class="list-inline-item"><a href="#">Terms</a></li>
-                <li class="list-inline-item"><a href="#">Mappa del Sito</a></li>
-                <li class="list-inline-item"><a href="#">Dettagli</a></li>
-            </ul>
-        </nav>
-        <div class="footer-icons d-flex align-items-center gap-3">
-            <span>Italiano (IT)</span>
-            <span>€ EUR</span>
-            <div class="social-icons">
-                <a href="#"><img src="../assets/facebook-icon.png" alt="Facebook"></a>
-                <a href="#"><img src="../assets/instagram-icon.png" alt="Instagram"></a>
+    <footer class="footer-container">
+        <section id="footerShared" class="row px-4">
+            <div id="assistenza" class="col-sm-12 col-lg-4">
+                <h6>Support</h6>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">AirCover</a></li>
+                    <li><a href="#">Anti-discrimination</a></li>
+                    <li><a href="#">Disability Support</a></li>
+                    <li><a href="#">Cancellation Options</a></li>
+                    <li><a href="#">Report neighbourhood concern</a></li>
+                </ul>
             </div>
-        </div>
+            <div id="ospitare" class="col-sm-12 col-lg-4">
+                <h6>Hosting</h6>
+                <ul>
+                    <li><a href="#">Airbnb your home</a></li>
+                    <li><a href="#">AirCover for Hosts</a></li>
+                    <li><a href="#">Hosting Resources</a></li>
+                    <li><a href="#">Community Forum</a></li>
+                    <li><a href="#">Join a free Hosting Class</a></li>
+                    <li><a href="#">Find a co-host</a></li>
+                </ul>
+            </div>
+            <div id="ospitare" class="col-sm-12 col-lg-4">
+                <h6>Airbnb</h6>
+                <ul>
+                    <li><a href="#">2025 Summer Release</a></li>
+                    <li><a href="#">Newsroom</a></li>
+                    <li><a href="#">New Features</a></li>
+                    <li><a href="#">Carreers</a></li>
+                    <li><a href="#">Investors</a></li>
+                    <li><a href="#">Gift Card</a></li>
+                    <li><a href="#">Airbnb.org emergency stays</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="copyright" class="d-flex justify-content-between align-items-center p-4 border-top">
+            <div class="copyright-left d-none d-lg-block">
+                <p class="mb-0">© 2025 Airbnb, Inc. · Privacy · Terms · Sitemap · Company details</p>
+            </div>
+            
+            <div class="copyright-right d-flex align-items-center gap-4">
+                <div class="language-currency d-flex gap-3">
+                    <span><i class="bi bi-globe"></i> English (EN)</span>
+                    <span><i class="bi bi-currency-euro"></i> EUR</span>
+                </div>
+                <div class="social-icons d-flex gap-2">
+                    <i class="bi bi-facebook"></i>
+                    <i class="bi bi-twitter-x"></i>
+                    <i class="bi bi-instagram"></i>
+                </div>
+            </div>
+        </section>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="/javascript/updatedLayout.js"></script>
 </body>
-
-</main>
 </html>
