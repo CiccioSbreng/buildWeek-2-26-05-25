@@ -4,14 +4,12 @@
 
 /* --- XS: Fino a 575.98px --- */
 @media (max-width: 575.98px) {
-
     .container,
     .custom-container {
-        padding: 8px;
+        padding: 0 8px;
         width: 100%;
     }
 
-    /* Ridotto il margine inferiore per avvicinare le card */
     .card {
         margin-bottom: 6px;
     }
@@ -26,15 +24,16 @@
     }
 
     .card-body p {
-        text-align: center;
+        font-size: 0.75em;
+        text-align: left;
     }
 
-    /* bottoni in colonna a larghezza piena */
     .btn-home {
         display: flex;
         flex-direction: column;
         align-items: stretch;
         gap: 8px;
+        padding: 0 8px;
     }
 
     .btn-home .btn {
@@ -44,11 +43,11 @@
 
 /* --- SM: 576px a 767.98px --- */
 @media (min-width: 576px) and (max-width: 767.98px) {
-    .container {
+    .container,
+    .custom-container {
         padding: 0 10px;
     }
 
-    /*riduciamo lo spazio tra le card */
     .card {
         margin-bottom: 6px;
     }
@@ -63,15 +62,16 @@
     }
 
     .card-body p {
-        text-align: center;
+        font-size: 0.8em;
+        text-align: left;
     }
 
-    /* Disposizione dei bottoni in colonna a larghezza piena */
     .btn-home {
         display: flex;
         flex-direction: column;
         align-items: stretch;
         gap: 10px;
+        padding: 0 10px;
     }
 
     .btn-home .btn {
@@ -81,7 +81,8 @@
 
 /* --- MD: 768px a 991.98px --- */
 @media (min-width: 768px) and (max-width: 991.98px) {
-    .container {
+    .container,
+    .custom-container {
         padding: 0 20px;
     }
 
@@ -92,15 +93,16 @@
     }
 
     .card-body p {
-        text-align: center;
+        font-size: 0.85em;
+        text-align: left;
     }
 
-    /*la disposizione colonna dei bottoni anche su MD */
     .btn-home {
         display: flex;
         flex-direction: column;
         align-items: stretch;
         gap: 10px;
+        padding: 0 20px;
     }
 
     .btn-home .btn {
@@ -120,22 +122,23 @@
     }
 
     .card-body p {
+        font-size: 0.9em;
         text-align: left;
     }
 
-    /*forzare i bottoni in colonna anche su LG, decommenta la sezione seguente */
+    /* Decommenta se vuoi i bottoni in colonna anche su LG */
     /*
-  .btn-home {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-  }
-  
-  .btn-home .btn {
-    width: 100%;
-  }
-  */
+    .btn-home {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .btn-home .btn {
+        width: 100%;
+    }
+    */
 }
 
 /* --- XL: 1200px e oltre --- */
@@ -154,6 +157,7 @@
     }
 
     .card-body p {
+        font-size: 1em;
         text-align: left;
     }
 }
@@ -170,20 +174,21 @@
     }
 
     .card-body p {
+        font-size: 1em;
         text-align: left;
     }
 
-    /*forzare i bottoni in colonna anche su XXL, decommenta questa sezione */
+    /* Decommenta se vuoi i bottoni in colonna anche su XXL */
     /*
-  .btn-home {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-  }
-  
-  .btn-home .btn {
-    width: 100%;
-  }
-  */
+    .btn-home {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .btn-home .btn {
+        width: 100%;
+    }
+    */
 }
