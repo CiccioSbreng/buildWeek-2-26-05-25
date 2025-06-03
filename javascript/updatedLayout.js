@@ -2,13 +2,6 @@ console.log("reservation2.js loaded");
 
 const MAX_GUESTS = 5;
 
-// DA TESTARE!!!
-//caricamento logo in base al tag title della pagina
-window.addEventListener('DOMContentLoaded', function() {
-  let logo = document.querySelector(".logo");
-  if(document.title === 'Airbnb MOCK')
-    logo.setAttribute('src', '/assets/logo.png'); 
-});
 
 window.addEventListener("load", setBtnState); //così perché se no i bottoni non sono ancora caricati
 

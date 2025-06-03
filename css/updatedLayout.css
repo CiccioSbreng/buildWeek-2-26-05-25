@@ -331,6 +331,9 @@ footer {
   background-color: var(--background-hover);
   padding: 1em 2em;
 }
+footer h2{
+  color: black !important;
+}
 
 #inspo{
   width: 80%;
